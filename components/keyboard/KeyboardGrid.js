@@ -10,6 +10,7 @@ const KeyboardGrid = () => {
 
     keyboard.keyHeight = keyHeight;
     keyboard.keyWidth = keyWidth;
+    keyboard.yOffset = 100;
     const offsets = [30, 50, 70];
 
     keyboard.rows[0].offset = offsets[0];
@@ -17,7 +18,7 @@ const KeyboardGrid = () => {
     keyboard.rows[2].offset = offsets[2];
 
     return (
-        <div>
+        <div styles={{ color: "white" }}>
             {keyboard.rows.map((row) => {
                 return(
                     <Box className={styles.row} key={row.id}>
@@ -26,13 +27,14 @@ const KeyboardGrid = () => {
 
                         {row.keys.map((key) => {
                             return (
-                            <Box className={styles.key} style={{ width: `${keyboard.keyWidth}px`, height: `${keyboard.keyHeight}px` }} key={key.key}>{key.key}</Box>
+                            <Box key={key.id} className={styles.key} style={{ width: `${keyboard.keyWidth}px`, height: `${keyboard.keyHeight}px` }}>{key.id.toUpperCase()}</Box>
                             );
                         })}
 
                     </Box>
                 );
             })}
+            <Box className={styles.yOffset} style={{ width: "100%", height: `${keyboard.yOffset}px` }}/>
         </div>
     );
 };

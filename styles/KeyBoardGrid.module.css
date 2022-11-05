@@ -6,10 +6,14 @@
 .key {
     display: flex;
     justify-content: center;
-    align-content: center;
+    align-items: center;
     border: 1px solid red; /* temporary */
 }
 
 .offset {
     border: 1px solid lime;
+}
+
+.yOffset {
+    border: 1px dotted white;
 }

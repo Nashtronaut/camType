@@ -18,37 +18,37 @@ const keyboard = {
                 corsy: [,]
             },
             {
-                id: "q",
+                id: "e",
                 corsx: [,],
                 corsy: [,]
             },
             {
-                id: "q",
+                id: "r",
                 corsx: [,],
                 corsy: [,]
             },
             {
-                id: "q",
+                id: "t",
                 corsx: [,],
                 corsy: [,]
             },
             {
-                id: "q",
+                id: "y",
                 corsx: [,],
                 corsy: [,]
             },
             {
-                id: "q",
+                id: "u",
                 corsx: [,],
                 corsy: [,]
             },
             {
-                id: "q",
+                id: "i",
                 corsx: [,],
                 corsy: [,]
             },
             {
-                id: "q",
+                id: "o",
                 corsx: [,],
                 corsy: [,]
             },
