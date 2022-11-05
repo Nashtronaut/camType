@@ -11,6 +11,8 @@ import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
 import Divider from '@mui/material/Divider';
+import styles from '../styles/Home.module.css'
+import KeyboardGrid from '../components/keyboard/KeyboardGrid.js';
 
 import Container from '@mui/material/Container';
 
@@ -24,6 +26,7 @@ const PlaceholderGame = () => {
     </Box>
   )
 }
+
 
 export default function Home() {
 
