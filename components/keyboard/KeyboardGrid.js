@@ -25,7 +25,19 @@ const KeyboardGrid = () => {
 
                         <Box className={styles.offset} style={{ width: `${row.offset}px`, height: `${keyboard.keyHeight}px` }}  /> {/* offset Div */}
 
-                        {row.keys.map((key) => {
+                        {row.keys.map((key, index) => {
+
+                            let leftSide = row.offset + index * keyWidth; 
+                            row.keys[index].corsx[0] = leftSide;
+                            row.keys[index].corsx[1] = leftSide + keyWidth;
+
+                            let rowNum = 2;
+                            let bottomSide = keyboard.yOffset + rowNum * keyHeight;
+                            
+                            row.keys[index].corsy[0] = bottomSide;
+                            row.keys[index].corsy[1] = bottomSide + keyHeight;
+                            rowNum--;
+                            
                             return (
                             <Box key={key.id} className={styles.key} style={{ width: `${keyboard.keyWidth}px`, height: `${keyboard.keyHeight}px` }}>{key.id.toUpperCase()}</Box>
                             );
@@ -35,6 +47,7 @@ const KeyboardGrid = () => {
                 );
             })}
             <Box className={styles.yOffset} style={{ width: "100%", height: `${keyboard.yOffset}px` }}/>
+            {console.log(keyboard)}
         </div>
     );
 };
