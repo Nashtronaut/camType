@@ -66,6 +66,7 @@ export default function Home() {
             <Box
              display="flex"
              justifyContent="center"
+             className='quoteSelector'
             >
               <Button variant="outlined" color="secondary">
                 Start Game
