@@ -17,6 +17,7 @@ import Container from '@mui/material/Container';
 import Toolbar from '@mui/material/Toolbar';
 import KeyboardIcon from '@mui/icons-material/Keyboard';
 import Typography from '@mui/material/Typography';
+import CameraGridContainer from '../components/keyboard/CameraGridContainer'
 
 const PlaceholderGame = () => {
   return (
@@ -25,7 +26,6 @@ const PlaceholderGame = () => {
     </Box>
   )
 }
-
 
 export default function Home() {
 
@@ -72,7 +72,6 @@ export default function Home() {
               <Button variant="outlined" color="secondary" onClick={startGame}>
                 {showGrid ? "Start Game" : "Oh no take me back"}
               </Button>
-
             </Box>
         </Box>
       </Container>

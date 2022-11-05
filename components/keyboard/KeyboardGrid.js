@@ -3,19 +3,14 @@ import styles from '../../styles/KeyBoardGrid.module.css'
 import Box from "@mui/material/Box";
 import keyboard from './keyboard.js';
 
-const KeyboardGrid = () => {
-
-    const [keyHeight, setKeyHeight] = useState(100);
-    const [keyWidth, setKeyWidth] = useState(100);
-
-    keyboard.keyHeight = keyHeight;
-    keyboard.keyWidth = keyWidth;
-    keyboard.yOffset = 100;
-    const offsets = [30, 50, 70];
-
-    keyboard.rows[0].offset = offsets[0];
-    keyboard.rows[1].offset = offsets[1];
-    keyboard.rows[2].offset = offsets[2];
+const KeyboardGrid = (props) => {
+    
+    keyboard.keyHeight = props.keyHeight;
+    keyboard.keyWidth = props.keyWidth;
+    keyboard.yOffset = props.yOffset;
+    keyboard.rows[0].offset = props.topOffset;
+    keyboard.rows[1].offset = props.midOffset;
+    keyboard.rows[2].offset = props.botOffset;
 
     return (
         <div styles={{ color: "white" }}>
@@ -27,15 +22,15 @@ const KeyboardGrid = () => {
 
                         {row.keys.map((key, index) => {
 
-                            let leftSide = row.offset + index * keyWidth; 
+                            let leftSide = row.offset + index * keyboard.keyWidth; 
                             row.keys[index].corsx[0] = leftSide;
-                            row.keys[index].corsx[1] = leftSide + keyWidth;
+                            row.keys[index].corsx[1] = leftSide + keyboard.keyWidth;
 
                             let rowNum = 2;
-                            let bottomSide = keyboard.yOffset + rowNum * keyHeight;
+                            let bottomSide = keyboard.yOffset + rowNum * keyboard.keyHeight;
                             
                             row.keys[index].corsy[0] = bottomSide;
-                            row.keys[index].corsy[1] = bottomSide + keyHeight;
+                            row.keys[index].corsy[1] = bottomSide + keyboard.keyHeight;
                             rowNum--;
                             
                             return (
