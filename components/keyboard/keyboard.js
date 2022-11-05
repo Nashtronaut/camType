@@ -7,43 +7,52 @@ const keyboard = {
         offset: 0,
         keys: [{
             q: {
+                id: "q",
                 corsx: [,],
                 corsy: [,]
             },
             w: {
-                key: "w",
+                id: "w",
                 corsx: [,],
                 corsy: [,]
             },
             e: {
+                id: "q",
                 corsx: [,],
                 corsy: [,]
             },
             r: {
+                id: "q",
                 corsx: [,],
                 corsy: [,]
             },
             t: {
+                id: "q",
                 corsx: [,],
                 corsy: [,]
             },
             y: {
+                id: "q",
                 corsx: [,],
                 corsy: [,]
             },
             u: {
+                id: "q",
                 corsx: [,],
                 corsy: [,]
             },
             i: {
+                id: "q",
                 corsx: [,],
                 corsy: [,]
             },
             o: {
+                id: "q",
                 corsx: [,],
                 corsy: [,]
             },
             p: {
+                id: "p",
                 corsx: [,],
                 corsy: [,]
             }
@@ -54,42 +63,52 @@ const keyboard = {
         offset: 0,
         keys: [{
             a: {
+                id: "a",
                 corsx: [,],
                 corsy: [,]
             },
             s: {
+                id: "s",
                 corsx: [,],
                 corsy: [,]
             },
             d: {
+                id: "d",
                 corsx: [,],
                 corsy: [,]
             },
             f: {
+                id: "f",
                 corsx: [,],
                 corsy: [,]
             },
             g: {
+                id: "g",
                 corsx: [,],
                 corsy: [,]
             },
             h: {
+                id: "h",
                 corsx: [,],
                 corsy: [,]
             },
             j: {
+                id: "j",
                 corsx: [,],
                 corsy: [,]
             },
             k: {
+                id: "k",
                 corsx: [,],
                 corsy: [,]
             },
             l: {
+                id: "l",
                 corsx: [,],
                 corsy: [,]
             },
             semi: {
+                id: ";",
                 corsx: [,],
                 corsy: [,]
             }
@@ -100,48 +119,52 @@ const keyboard = {
         offset: 0,
         keys: [{
             z: {
-                key: "z",
+                id: "z",
                 corsx: [,],
                 corsy: [,]
             },
             x: {
-                key: "x",
+                id: "x",
                 corsx: [,],
                 corsy: [,]
             },
             c: {
-                key: "c",
+                id: "c",
                 corsx: [,],
                 corsy: [,]
             },
             v: {
-                key: "v",
+                id: "v",
                 corsx: [,],
                 corsy: [,]
             },
             b: {
-                key: "b",
+                id: "b",
                 corsx: [,],
                 corsy: [,]
             },
             n: {
-                key: "n",
+                id: "n",
                 corsx: [,],
                 corsy: [,]
             },
             m: {
+                id: "m",
                 corsx: [,],
                 corsy: [,]
             },
             comma: {
+                id: ",",
                 corsx: [,],
                 corsy: [,]
             },
             period: {
+                id: ".",
                 corsx: [,],
                 corsy: [,]
             },
             slash: {
+                id: "/",
                 corsx: [,],
                 corsy: [,]
             }
