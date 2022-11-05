@@ -1,4 +1,4 @@
-import {useState, useEffect} from 'react'
+import {useState} from 'react'
 import Head from 'next/head';
 import Image from 'next/image';
 import styles from '../styles/Home.module.css';
@@ -11,14 +11,31 @@ import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
 import Divider from '@mui/material/Divider';
+import styles from '../styles/Home.module.css'
+import KeyboardGrid from '../components/keyboard/KeyboardGrid.js';
 
 import Container from '@mui/material/Container';
 
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 
+const PlaceholderGame = () => {
+  return (
+    <Box style={{height: 500, border: '1px dotted red'}}>
+        Game box
+    </Box>
+  )
+}
+
 
 export default function Home() {
+
+  const [showGrid, setShowGrid] = useState(true)
+  
+  const startGame = () => {
+    setShowGrid(!showGrid)
+  }
+
   return (
     <div>
       <Head>
@@ -37,24 +54,23 @@ export default function Home() {
       <main>
       <Container>
           {/* Camera Component */}
-          <Typography variant="h3" align="center" paragraph>
-              Keyboard Typing Trainer
-          </Typography>
-        <Box>
+        <Box paddingTop="2rem">
             {/* Placeholder box for camera display */}
-            <Box>
+            {showGrid && <Box>
               <Box style={{height: 500, border: '1px dotted green'}}>
-
+                Grid Box
               </Box>
-            </Box>
+            </Box>}
+
+            {!showGrid && <PlaceholderGame/>}
 
             <Box
              display="flex"
              justifyContent="center"
              paddingTop="2rem"
             >
-              <Button variant="outlined" color="secondary">
-                Start Game
+              <Button variant="outlined" color="secondary" onClick={startGame}>
+                {showGrid ? "Start Game" : "Oh no take me back"}
               </Button>
 
             </Box>
