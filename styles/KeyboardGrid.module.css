@@ -1,0 +1,12 @@
+.row {
+    display: flex;
+    align-items: center;
+    border: 1px solid purple;
+}
+
+.key {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    border: 1px solid teal; /* temporary */
+}
