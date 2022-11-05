@@ -38,20 +38,29 @@ export default function Home() {
             }}
           >
             <Typography variant="h3" align="center" paragraph>
-              Typing game
+              Keyboard Typing Trainer
             </Typography>
             <Typography variant="h5" align="center"gutterBottom>
               Instructions:
             </Typography>
             <List>
                 <ListItem>
-                  <ListItemText primary="Rule 1"/>
+                  <ListItemText primary="Ensure your keyboard is in view of your webcam or camera."/>
                 </ListItem>
                 <ListItem>
-                  <ListItemText primary="Rule 2"/>
+                  <ListItemText primary="Press <button> to activate your camera."/>
                 </ListItem>
                 <ListItem>
-                  <ListItemText primary="Rule 3"/>
+                  <ListItemText primary="Click and drag to line up the onscreen keyboard with your video feed."/>
+                </ListItem>
+                <ListItem>
+                  <ListItemText primary="Once aligned, Lock in the keyboard shape."/>
+                </ListItem>
+                <ListItem>
+                  <ListItemText primary="Your hands will be recognized and a script will appear for you to type."/>
+                </ListItem>
+                <ListItem>
+                  <ListItemText primary="Type the script and the machine vision technology will analyze your hand posture (and WPM)."/>
                 </ListItem>
             </List>
             <Box
