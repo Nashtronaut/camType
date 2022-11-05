@@ -9,8 +9,6 @@ import Button from '@mui/material/Button';
 
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
-import ListItemAvatar from '@mui/material/ListItemAvatar';
-import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import Divider from '@mui/material/Divider';
 
@@ -18,6 +16,7 @@ import Container from '@mui/material/Container';
 
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
+
 
 export default function Home() {
   return (
@@ -36,16 +35,38 @@ export default function Home() {
       </AppBar>
     {/* Component to load after button push here */}
       <main>
+      <Container>
+          {/* Camera Component */}
+          <Typography variant="h3" align="center" paragraph>
+              Keyboard Typing Trainer
+          </Typography>
+        <Box>
+            {/* Placeholder box for camera display */}
+            <Box>
+              <Box style={{height: 500, border: '1px dotted green'}}>
+
+              </Box>
+            </Box>
+
+            <Box
+             display="flex"
+             justifyContent="center"
+             paddingTop="2rem"
+            >
+              <Button variant="outlined" color="secondary">
+                Start Game
+              </Button>
+
+            </Box>
+        </Box>
+      </Container>
       <Container maxWidth="md">
           <Box
             sx={{
               pt: 8,
-              pb: 6,
+              pb: 6
             }}
           >
-            <Typography variant="h3" align="center" paragraph>
-              Keyboard Typing Trainer
-            </Typography>
             <Typography variant="h5" align="center"gutterBottom>
               Instructions:
             </Typography>
@@ -59,6 +80,7 @@ export default function Home() {
                 <ListItem>
                   <ListItemText primary="Ensure your keyboard is in view of your webcam or camera."/>
                 </ListItem>
+                <Divider/>
                 <ListItem>
                   <ListItemText primary="Press <button> to activate your camera."/>
                 </ListItem>
