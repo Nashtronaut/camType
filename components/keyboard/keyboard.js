@@ -1,11 +1,17 @@
 const keyboard = {
+    keyWidth: 10,
+    keyHeight: 10,
+    yOffset: 0,
     topRow: {
+        id: "topRow",
+        offset: 0,
         keys: [{
             q: {
                 corsx: [,],
                 corsy: [,]
             },
             w: {
+                key: "w",
                 corsx: [,],
                 corsy: [,]
             },
@@ -44,6 +50,8 @@ const keyboard = {
     }]
     },
     midRow: {
+        id: "midRow",
+        offset: 0,
         keys: [{
             a: {
                 corsx: [,],
@@ -88,28 +96,36 @@ const keyboard = {
     }]
     },
     botRow: {
+        id: "botRow",
+        offset: 0,
         keys: [{
             z: {
+                key: "z",
                 corsx: [,],
                 corsy: [,]
             },
             x: {
+                key: "x",
                 corsx: [,],
                 corsy: [,]
             },
             c: {
+                key: "c",
                 corsx: [,],
                 corsy: [,]
             },
             v: {
+                key: "v",
                 corsx: [,],
                 corsy: [,]
             },
             b: {
+                key: "b",
                 corsx: [,],
                 corsy: [,]
             },
             n: {
+                key: "n",
                 corsx: [,],
                 corsy: [,]
             },
