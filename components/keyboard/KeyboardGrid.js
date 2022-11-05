@@ -47,7 +47,6 @@ const KeyboardGrid = () => {
                 );
             })}
             <Box className={styles.yOffset} style={{ width: "100%", height: `${keyboard.yOffset}px` }}/>
-            {console.log(keyboard)}
         </div>
     );
 };
