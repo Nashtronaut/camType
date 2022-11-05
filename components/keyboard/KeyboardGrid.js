@@ -42,7 +42,6 @@ const KeyboardGrid = () => {
                             <Box key={key.id} className={styles.key} style={{ width: `${keyboard.keyWidth}px`, height: `${keyboard.keyHeight}px` }}>{key.id.toUpperCase()}</Box>
                             );
                         })}
-
                     </Box>
                 );
             })}
