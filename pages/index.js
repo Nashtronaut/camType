@@ -98,15 +98,6 @@ export default function Home() {
                 </ListItem>
             </List>
           </Box>
-            <Box
-             display="flex"
-             justifyContent="center"
-            >
-              <Button variant="outlined" color="secondary">
-                Start Game
-              </Button>
-
-            </Box>
           </Box>
         </Container>
       </main>
