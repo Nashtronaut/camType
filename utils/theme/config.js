@@ -19,3 +19,6 @@ const themeOptions = {
 
 const theme = createTheme(themeOptions)
 export {theme}
+
+const theme = createTheme(themeOptions)
+export {theme}
