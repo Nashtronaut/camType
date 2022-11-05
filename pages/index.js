@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
-import KeyboardGrid from '../components/keyboard/KeyboardGrid.js';
+import CameraGridContainer from '../components/keyboard/CameraGridContainer'
 
 export default function Home() {
   return (
@@ -13,7 +13,7 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <KeyboardGrid />
+        <CameraGridContainer />
         
       </main>
 
