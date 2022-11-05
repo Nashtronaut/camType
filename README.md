@@ -1,3 +1,6 @@
+# camType
+HackED(beta) 2022 Project
+
 <<<<<<< HEAD
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
@@ -34,16 +37,6 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 =======
-# camType
-HackED(beta) 2022 Project
-
-```
-npm install
-```
-
-```
-npm run dev
-```
 
 
 >>>>>>> a10fed5370f63e4b7b52b872c88615fac0d41396
