@@ -2,175 +2,177 @@ const keyboard = {
     keyWidth: 10,
     keyHeight: 10,
     yOffset: 0,
-    topRow: {
-        key: "topRow",
+    rows: [
+        {
+        id: "topRow",
         offset: 0,
-        keys: [{
-            q: {
-                key: "q",
+        keys: [
+            {
+                id: "q",
                 corsx: [,],
                 corsy: [,]
             },
-            w: {
-                key: "w",
+            {
+                id: "w",
                 corsx: [,],
                 corsy: [,]
             },
-            e: {
-                key: "e",
+            {
+                id: "e",
                 corsx: [,],
                 corsy: [,]
             },
-            r: {
-                key: "r",
+            {
+                id: "r",
                 corsx: [,],
                 corsy: [,]
             },
-            t: {
-                key: "t",
+            {
+                id: "t",
                 corsx: [,],
                 corsy: [,]
             },
-            y: {
-                key:"y",
+            {
+                id: "y",
                 corsx: [,],
                 corsy: [,]
             },
-            u: {
-                key: "u",
+            {
+                id: "u",
                 corsx: [,],
                 corsy: [,]
             },
-            i: {
-                key: "i",
+            {
+                id: "i",
                 corsx: [,],
                 corsy: [,]
             },
-            o: {
-                key: "o",
+            {
+                id: "o",
                 corsx: [,],
                 corsy: [,]
             },
-            p: {
-                key: "p",
+            {
+                id: "p",
                 corsx: [,],
                 corsy: [,]
             }
-    }]
-    },
-    midRow: {
-        key: "midRow",
-        offset: 0,
-        keys: [{
-            a: {
-                key: "a",
-                corsx: [,],
-                corsy: [,]
-            },
-            s: {
-                key: "s",
-                corsx: [,],
-                corsy: [,]
-            },
-            d: {
-                key: 'd',
-                corsx: [,],
-                corsy: [,]
-            },
-            f: {
-                key: "f",
-                corsx: [,],
-                corsy: [,]
-            },
-            g: {
-                key: "g",
-                corsx: [,],
-                corsy: [,]
-            },
-            h: {
-                key: "h",
-                corsx: [,],
-                corsy: [,]
-            },
-            j: {
-                key: "j",
-                corsx: [,],
-                corsy: [,]
-            },
-            k: {
-                key: "k",
-                corsx: [,],
-                corsy: [,]
-            },
-            l: {
-                key: "l",
-                corsx: [,],
-                corsy: [,]
-            },
-            semi: {
-                key: ":",
-                corsx: [,],
-                corsy: [,]
-            }
-    }]
-    },
-    botRow: {
-        key: "botRow",
-        offset: 0,
-        keys: [{
-            z: {
-                key: "z",
-                corsx: [,],
-                corsy: [,]
-            },
-            x: {
-                key: "x",
-                corsx: [,],
-                corsy: [,]
-            },
-            c: {
-                key: "c",
-                corsx: [,],
-                corsy: [,]
-            },
-            v: {
-                key: "v",
-                corsx: [,],
-                corsy: [,]
-            },
-            b: {
-                key: "b",
-                corsx: [,],
-                corsy: [,]
-            },
-            n: {
-                key: "n",
-                corsx: [,],
-                corsy: [,]
-            },
-            m: {
-                key: 'm',
-                corsx: [,],
-                corsy: [,]
-            },
-            comma: {
-                key: ',',
-                corsx: [,],
-                corsy: [,]
-            },
-            period: {
-                key: '.',
-                corsx: [,],
-                corsy: [,]
-            },
-            slash: {
-                key: "/",
-                corsx: [,],
-                corsy: [,]
-            }
-        }]   
-    }
+        ]
+        },
+        {
+            id: "midRow",
+            offset: 0,
+            keys: [
+                {
+                    id: "a",
+                    corsx: [,],
+                    corsy: [,]
+                },
+                {
+                    id: "s",
+                    corsx: [,],
+                    corsy: [,]
+                },
+                {
+                    id: "d",
+                    corsx: [,],
+                    corsy: [,]
+                },
+                {
+                    id: "f",
+                    corsx: [,],
+                    corsy: [,]
+                },
+                {
+                    id: "g",
+                    corsx: [,],
+                    corsy: [,]
+                },
+                {
+                    id: "h",
+                    corsx: [,],
+                    corsy: [,]
+                },
+                {
+                    id: "j",
+                    corsx: [,],
+                    corsy: [,]
+                },
+                {
+                    id: "k",
+                    corsx: [,],
+                    corsy: [,]
+                },
+                {
+                    id: "l",
+                    corsx: [,],
+                    corsy: [,]
+                },
+                {
+                    id: ";",
+                    corsx: [,],
+                    corsy: [,]
+                }
+        ]
+        },
+        {
+            id: "botRow",
+            offset: 0,
+            keys: [
+                {
+                    id: "z",
+                    corsx: [,],
+                    corsy: [,]
+                },
+                {
+                    id: "x",
+                    corsx: [,],
+                    corsy: [,]
+                },
+                {
+                    id: "c",
+                    corsx: [,],
+                    corsy: [,]
+                },
+                {
+                    id: "v",
+                    corsx: [,],
+                    corsy: [,]
+                },
+                {
+                    id: "b",
+                    corsx: [,],
+                    corsy: [,]
+                },
+                {
+                    id: "n",
+                    corsx: [,],
+                    corsy: [,]
+                },
+                {
+                    id: "m",
+                    corsx: [,],
+                    corsy: [,]
+                },
+                {
+                    id: ",",
+                    corsx: [,],
+                    corsy: [,]
+                },
+                {
+                    id: ".",
+                    corsx: [,],
+                    corsy: [,]
+                },
+                {
+                    id: "/",
+                    corsx: [,],
+                    corsy: [,]
+                }
+            ]   
+        }   
+    ]
+    
 };
-
 
 export default keyboard; 
