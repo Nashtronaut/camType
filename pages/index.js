@@ -8,6 +8,12 @@ import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 
+import List from '@mui/material/List';
+import ListItem from '@mui/material/ListItem';
+import ListItemAvatar from '@mui/material/ListItemAvatar';
+import ListItemIcon from '@mui/material/ListItemIcon';
+import ListItemText from '@mui/material/ListItemText';
+
 import Container from '@mui/material/Container';
 
 import Toolbar from '@mui/material/Toolbar';
@@ -22,8 +28,43 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
+    {/* Component to load after button push here */}
       <main>
-      
+      <Container maxWidth="md">
+          <Box
+            sx={{
+              pt: 8,
+              pb: 6,
+            }}
+          >
+            <Typography variant="h3" align="center" paragraph>
+              Typing game
+            </Typography>
+            <Typography variant="h5" align="center"gutterBottom>
+              Instructions:
+            </Typography>
+            <List>
+                <ListItem>
+                  <ListItemText primary="Rule 1"/>
+                </ListItem>
+                <ListItem>
+                  <ListItemText primary="Rule 2"/>
+                </ListItem>
+                <ListItem>
+                  <ListItemText primary="Rule 3"/>
+                </ListItem>
+            </List>
+            <Box
+             display="flex"
+             justifyContent="center"
+            >
+              <Button variant="outlined" color="secondary">
+                Start Game
+              </Button>
+
+            </Box>
+          </Box>
+        </Container>
       </main>
 
       <footer className={styles.footer}>
