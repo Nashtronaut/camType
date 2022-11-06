@@ -1,5 +1,7 @@
 import { useState } from 'react';
 
+import compileQuotes from '../api/quoteAPI';
+
 import { Hands, HAND_CONNECTIONS } from '@mediapipe/hands';
 import '@mediapipe/control_utils';
 import { Camera } from '@mediapipe/camera_utils'
@@ -27,8 +29,8 @@ const setUp = () => {
         if (results.multiHandLandmarks) {
           for (const landmarks of results.multiHandLandmarks) {
             drawConnectors(canvasCtx, landmarks, HAND_CONNECTIONS,
-                           {color: '#00FF00', lineWidth: 5});
-            drawLandmarks(canvasCtx, landmarks, {color: '#FF0000', lineWidth: 2});
+                           {color: '#00FF00', lineWidth: 1});
+            drawLandmarks(canvasCtx, landmarks, {color: '#FF0000', lineWidth: 1, radius: 2 });
           }
         }
         canvasCtx.restore();
@@ -92,6 +94,7 @@ const CameraGridContainer = () => {
 
     return(
         <Box>
+            <Button onClick={compileQuotes}>quoteTest</Button>
             <Grid container style={{ position: 'relative', marginBottom: "1rem" }}>
                 <Grid xs={12} item style={{ display: "flex" }}>
                     <canvas className="output_canvas" style={{ position: 'absolute', background: "purple", height: "100%", width: "100%" }} />
