@@ -41,6 +41,8 @@ const KeyboardGrid = (props) => {
                 );
             })}
             <Box className={styles.yOffset} style={{ width: "100%", height: `${keyboard.yOffset}px` }}/>
+            {console.log(keyboard.rows[0].keys[0].corsx)}
+            {console.log(keyboard.rows[0].keys[0].corsy)}
         </div>
     );
 };
