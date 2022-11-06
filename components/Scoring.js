@@ -2,7 +2,7 @@ import { SettingsCellRounded } from '@mui/icons-material'
 import { useEffect, useState } from 'react'
 
 export default function ScoreKeeper() {
-    const [score, setScore] = useState(parseInt(localStorage.getItem('score'))  || 0)
+    const [score, setScore] = useState(parseInt(localStorage.getItem('score')))
 
     useEffect (() => {
         localStorage.setItem('score', score)
@@ -12,7 +12,7 @@ export default function ScoreKeeper() {
         <div>
             <h1>Your score is: {score}</h1>
 
-           /* Something about the corrent key press */
+           /* Something about the corrent key press w key  */
 
             onKeydown={() => setScore(prevScore => prevScore+1) }
         </div>
