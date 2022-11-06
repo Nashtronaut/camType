@@ -121,7 +121,7 @@ const CameraGridContainer = () => {
                     
                     <Box style={{border: "1px solid blue", borderRadius: "2rem", padding: "0.8rem, 2rem", padding: "0.2rem 2rem"}}>
                         <InputLabel>Slide keyboard Up/Down</InputLabel>
-                        <Slider value={ yOffset } onChange={ handleYOffset } max={400} disabled={lockVals} />
+                        <Slider value={ yOffset } onChange={ handleYOffset } max={79} disabled={lockVals} />
                     </Box>
                 </Grid>
 
