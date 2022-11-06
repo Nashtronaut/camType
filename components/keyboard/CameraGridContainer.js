@@ -10,7 +10,7 @@ import KeyboardGrid from './KeyboardGrid';
 import Sliders from '../Sliders';
 import TypingGame from '../TypingGame';
 
-const CameraGridContainer = () => {
+const CameraGridContainer = (props) => {
 
     const setUpCoords = (incomingCoords) => {
         if (incomingCoords){
@@ -117,6 +117,7 @@ const CameraGridContainer = () => {
     const [botOffset, setBotOffset] = useState(250);
     const screenHeight = 560;
     const screenWidth = 1000;
+    const setShowBoard = props.setShowBoard;
 
     const handleKeyWidth = (e, newValue) => {
         setKeyWidth(newValue);
@@ -185,6 +186,7 @@ const CameraGridContainer = () => {
                 handleBotOffset={handleBotOffset}
                 setUp={setUp}
                 setBottomTab={setBottomTab}
+                setShowBoard={setShowBoard}
                 />
             }
 
