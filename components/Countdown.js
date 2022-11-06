@@ -1,21 +1,17 @@
-import * as React from "react";
-import { render } from "react-dom";
+import { useState, useEffect } from "react";
 
-import "./styles.css";
+import Box from '@mui/material/Box';
 
-function App() {
-  const [counter, setCounter] = React.useState(60);
+const Countdown = () => {
+  const [counter, setCounter] = useState(60);
 
-React.useEffect(() => {
+useEffect(() => {
     counter > 0 && setTimeout(() => setCounter(counter - 1), 1000);
   }, [counter]);
 
   return (
-    <div className="GameTimeCounter">
-      <div>Countdown: {counter}</div>
-    </div>
+      <Box>Countdown: {counter}</Box>
   );
 }
 
-const rootElement = document.getElementById("root");
-render(<App />, rootElement);
+export default Countdown;
