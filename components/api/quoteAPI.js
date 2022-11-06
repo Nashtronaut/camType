@@ -1,4 +1,4 @@
-    const URL = 'https://programming-quotes-api.herokuapp.com/quotes/random';
+const URL = 'https://programming-quotes-api.herokuapp.com/quotes/random';
 
 const compileQuotes = async () => {
     let quote = "";
@@ -7,7 +7,6 @@ const compileQuotes = async () => {
         quote += " " + await callQuote();
     }
 
-    console.log(quote);
     return quote;
 }
 
