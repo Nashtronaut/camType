@@ -169,10 +169,9 @@ const keyboard = {
                     xCors: [,],
                     yCors: [,]
                 }
-            ]   
-        }   
+        ]
+        },   
     ]
-    
 };
 
-export default keyboard;  
+export default keyboard;

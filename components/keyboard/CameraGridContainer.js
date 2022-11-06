@@ -1,8 +1,10 @@
 import { useState } from 'react';
+import styles from '../../styles/CameraGridContainer.module.css';
 import { Hands, HAND_CONNECTIONS } from '@mediapipe/hands';
 import '@mediapipe/control_utils';
 import { Camera } from '@mediapipe/camera_utils'
 import { drawConnectors, drawLandmarks } from '@mediapipe/drawing_utils';
+import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import KeyboardGrid from './KeyboardGrid';
@@ -58,11 +60,10 @@ const CameraGridContainer = () => {
     const [bottomTab, setBottomTab] = useState(0);
     const [keyHeight, setKeyHeight] = useState(70);
     const [keyWidth, setKeyWidth] = useState(70);
-    const [yOffset, setYOffset] = useState(300);
+    const [yOffset, setYOffset] = useState(25);
     const [topOffset, setTopOffset] = useState(200);
     const [midOffset, setMidOffset] = useState(225);
     const [botOffset, setBotOffset] = useState(250);
-    
 
     const handleKeyWidth = (e, newValue) => {
         setKeyWidth(newValue);
@@ -88,6 +89,7 @@ const CameraGridContainer = () => {
         setBotOffset(newValue);
     };
 
+
     const handleBottomTab = (e, newValue) => {
         setBottomTab(newValue);
     };
@@ -96,19 +98,22 @@ const CameraGridContainer = () => {
         <Box>
             <Grid container style={{ position: 'relative', marginBottom: "1rem" }}>
                 <Grid xs={12} item style={{ display: "flex" }}>
-                    <canvas className="output_canvas" style={{ position: 'absolute', background: "purple", height: "100%", width: "100%" }} />
+                    <canvas className="output_canvas"  style={{ position: 'absolute', background: "purple", height: "100%", width: "100%" }} />
                     <video className="input_video" style={{ display: "none" }} autoPlay playInline /> 
-                    <Box style={{ position: 'relative', width: "100%", height: "100%", display: "flex", zIndex: 1, alignItems: 'end', minHeight: "35rem", border: "1px solid hotpink", overflow: 'hidden' }}>
+                    <Box className={styles.gridBox}>
                         <KeyboardGrid
                             keyHeight={keyHeight}
                             keyWidth={keyWidth}
                             yOffset={yOffset}
                             topOffset={topOffset}
                             midOffset={midOffset}
-                            botOffset={botOffset}/>
+                            botOffset={botOffset}
+                            spaceOffset={spaceOffset}
+                            spaceWidth={spaceWidth}/>
                     </Box>
                 </Grid>
             </Grid>
+
 
             {bottomTab === 0 && 
                 <Sliders 
@@ -132,7 +137,6 @@ const CameraGridContainer = () => {
                 <TypingGame/>
             }
         </Box>
-        
     );
 }
 
