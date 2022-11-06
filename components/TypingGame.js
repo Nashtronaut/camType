@@ -36,14 +36,20 @@ const TypingGame = (props) => {
     const [wpm, setWpm] = useState(0);
     const [countDown, setCountDown] = useState(60);
     const [startGame, setStartGame] = useState(false)
-    
     const [startHelp, setStartHelp] = useState("")
+    const [currentScore, setCurrentScore] = useState(0)
+    const [highScore, setHighScore] = useState(0)
 
     useKeyPress(key => {
+        console.log(key)
         if(endGame){
             setCountDown(60)
             setEndGame(false)
             setWpm(0)
+            if(currentScore > highScore){
+                setHighScore(currentScore)
+            }
+            setCurrentScore(0)
         }
         if (key === "`"){
             setStartGame(true)
@@ -75,8 +81,12 @@ const TypingGame = (props) => {
             if (!startTime) {
                 setStartTime(currentTime());
               }
+            if(key !== currentChar){
+                setCurrentScore(currentScore -10)
+            }
             
             if (key === currentChar) {
+                setCurrentScore(currentScore+15)
               if (leftPadding.length > 0) {
                 setLeftPadding(leftPadding.substring(1));
               }
@@ -135,7 +145,7 @@ const TypingGame = (props) => {
             <span style={{backgroundColor: "#09d3ac"}}>{currentChar}</span>
             <span>{incomingChars.substr(0, 45)}</span>
         </p>
-        <h3 style={{textAlign: "center", fontFamily: "monospace", fontSize: "1.5rem"}}>WPM: {wpm} | Time Left: {countDown}</h3>
+        <h3 style={{textAlign: "center", fontFamily: "monospace", fontSize: "1.5rem"}}>WPM: {wpm} | Time Left: {countDown} | Score: {currentScore} | High Score: {highScore}</h3>
         {!startGame && <h4 style={{textAlign: "center", fontFamily: "monospace", fontSize: "1.2rem"}}> {startHelp}</h4>}
     </Box>
   );
