@@ -46,7 +46,7 @@ export default function Home() {
       <main>
       <Container>
         <Box paddingTop="2rem">
-          <CameraGridContainer/> 
+          <CameraGridContainer />
         </Box>
       </Container>
       <Container maxWidth="md" sx={{pt:5}}>

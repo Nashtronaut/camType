@@ -57,7 +57,7 @@ const CameraGridContainer = () => {
     const [bottomTab, setBottomTab] = useState(0);
     const [keyHeight, setKeyHeight] = useState(70);
     const [keyWidth, setKeyWidth] = useState(70);
-    const [yOffset, setYOffset] = useState(25);
+    const [yOffset, setYOffset] = useState(300);
     const [topOffset, setTopOffset] = useState(200);
     const [midOffset, setMidOffset] = useState(225);
     const [botOffset, setBotOffset] = useState(250);
@@ -95,9 +95,9 @@ const CameraGridContainer = () => {
         <Box>
             <Grid container style={{ position: 'relative', marginBottom: "1rem" }}>
                 <Grid xs={12} item style={{ display: "flex" }}>
-                    <canvas className="output_canvas"  style={{ position: 'absolute', background: "purple", height: "100%", width: "100%" }} />
+                    <canvas className="output_canvas"  style={{ position: 'absolute', background: "purple", height: "100%", width: "100%"}} />
                     <video className="input_video" style={{ display: "none" }} autoPlay playInline /> 
-                    <Box className={styles.gridBox}>
+                    <Box style={{ position: 'relative', width: "100%", height: "100%", display: "flex", zIndex: 1, alignItems: 'end', minHeight: "35rem", maxHeight: "35rem", border: "1px solid hotpink", overflow: 'hidden' }}>
                         <KeyboardGrid
                             keyHeight={keyHeight}
                             keyWidth={keyWidth}

@@ -9,11 +9,9 @@ const KeyboardGrid = (props) => {
     keyboard.keyHeight = props.keyHeight;
     keyboard.keyWidth = props.keyWidth;
     keyboard.yOffset = props.yOffset;
-    keyboard.spaceWidth = props.spaceWidth;
     keyboard.rows[0].offset = props.topOffset;
     keyboard.rows[1].offset = props.midOffset;
     keyboard.rows[2].offset = props.botOffset;
-    keyboard.rows[3].offset = props.spaceOffset;
 
     return (
         <div styles={{ color: "white" }}>
