@@ -170,24 +170,8 @@ const keyboard = {
                     yCors: [,]
                 }
         ]
-        },
-        {
-            id: "spaceRow",
-            spaceWidth: 150,
-            offset: 0,
-            keys: [
-                {
-                    id: "space",
-                    xCors: [,],
-                    yCors: [,]
-                },
-            ]   
-        }   
+        },   
     ]
-
-    
 };
 
-
-
-export default keyboard; 
+export default keyboard;

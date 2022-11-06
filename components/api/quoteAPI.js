@@ -1,17 +1,20 @@
-const URL = 'api.quotable.io/random'
+const URL = 'https://programming-quotes-api.herokuapp.com/quotes/random';
 
-const compileQuotes = () => {
+const QUOTE_LENGTH = 20; //ADJUSTS LENGTH OF QUOTE. 
+
+const compileQuotes = async () => {
     let quote = "";
 
-    for (let i = 0; i < 10; i++) {
-        quote += callQuote().content;
+    for (let i = 0; i < QUOTE_LENGTH; i++) {
+        quote += await callQuote() + " ";
     }
-
-    return quote;
+    return quote.trim();
 }
 
-const callQuote = () => {
-    fetch(URL).then((response) => {
-        return response.json();
-    })
+const callQuote = async () => {
+    return fetch(URL)
+        .then((response) => response.json())
+        .then((data) => data.en);
 };
+
+export default compileQuotes;

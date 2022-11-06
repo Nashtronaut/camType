@@ -1,20 +1,17 @@
 import { useState } from 'react';
-
+import styles from '../../styles/CameraGridContainer.module.css';
 import { Hands, HAND_CONNECTIONS } from '@mediapipe/hands';
 import '@mediapipe/control_utils';
 import { Camera } from '@mediapipe/camera_utils'
 import { drawConnectors, drawLandmarks } from '@mediapipe/drawing_utils';
-
-import styles from '../../styles/CameraGridContainer.module.css' 
- 
 import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
-import InputLabel from '@mui/material/InputLabel';
 import KeyboardGrid from './KeyboardGrid';
-import LockOpenIcon from '@mui/icons-material/LockOpen';
-import LockIcon from '@mui/icons-material/Lock';
-import { Slider } from '@mui/material';
+import Sliders from '../Sliders';
+import Tabs from '@mui/material/Tabs'
+import Tab from '@mui/material/Tab'
+import TypingGame from '../TypingGame';
 
 const setUp = () => {
     const videoElement = document.getElementsByClassName('input_video')[0];
@@ -29,8 +26,8 @@ const setUp = () => {
         if (results.multiHandLandmarks) {
           for (const landmarks of results.multiHandLandmarks) {
             drawConnectors(canvasCtx, landmarks, HAND_CONNECTIONS,
-                           {color: '#00FF00', lineWidth: 5});
-            drawLandmarks(canvasCtx, landmarks, {color: '#FF0000', lineWidth: 2});
+                           {color: '#00FF00', lineWidth: 1});
+            drawLandmarks(canvasCtx, landmarks, {color: '#FF0000', lineWidth: 1, radius: 2 });
           }
         }
         canvasCtx.restore();
@@ -60,15 +57,13 @@ const setUp = () => {
 
 const CameraGridContainer = () => {
 
+    const [bottomTab, setBottomTab] = useState(0);
     const [keyHeight, setKeyHeight] = useState(70);
     const [keyWidth, setKeyWidth] = useState(70);
     const [yOffset, setYOffset] = useState(25);
     const [topOffset, setTopOffset] = useState(200);
     const [midOffset, setMidOffset] = useState(225);
     const [botOffset, setBotOffset] = useState(250);
-    const [spaceOffset, setSpaceOffset] = useState(100);
-    const [spaceWidth, setSpaceWidth] = useState(100);
-    const [lockVals, setLockVals] = useState(false);
 
     const handleKeyWidth = (e, newValue) => {
         setKeyWidth(newValue);
@@ -94,14 +89,10 @@ const CameraGridContainer = () => {
         setBotOffset(newValue);
     };
 
-    const handleSpaceOffset = (e, newValue) => {
-        setSpaceOffset(newValue);
-    };
 
-    const handleSpaceWidth = (e, newValue) => {
-        setSpaceWidth(newValue);
+    const handleBottomTab = (e, newValue) => {
+        setBottomTab(newValue);
     };
-
 
     return(
         <Box>
@@ -111,7 +102,7 @@ const CameraGridContainer = () => {
                     <video className="input_video" style={{ display: "none" }} autoPlay playInline /> 
                     <Box className={styles.gridBox}>
                         <KeyboardGrid
-                            keyHeight={keyHeight} 
+                            keyHeight={keyHeight}
                             keyWidth={keyWidth}
                             yOffset={yOffset}
                             topOffset={topOffset}
@@ -122,68 +113,30 @@ const CameraGridContainer = () => {
                     </Box>
                 </Grid>
             </Grid>
-            <Grid container style={{ justifyContent: 'center' }}>
-                <Grid item xs={4} style={{display: "flex", flexDirection: "column", gap: 15}}>
-                    <Box className= {styles.topBox}>
-                        <InputLabel>Key Width</InputLabel>
-                        <Slider value={ keyWidth } onChange={ handleKeyWidth }  min={35} max={115} disabled={lockVals} />
-                    </Box>
-                    
-                    <Box className = {styles.keyboardBoxes}>
-                        <InputLabel>Key Height</InputLabel>
-                        <Slider value={ keyHeight } onChange={ handleKeyHeight } min={50} max={127} disabled={lockVals} />
-                    </Box>
 
-                    <Box className = {styles.keyboardBoxes}>
-                        <InputLabel>Space Bar Width</InputLabel>
-                        <Slider value={ spaceWidth } onChange={ handleSpaceWidth } min={0} max={1000} disabled={lockVals} />
-                    </Box>
-                    
-                    <Box className = {styles.keyboardBoxes}>
-                        <InputLabel>Slide keyboard Up/Down</InputLabel>
-                        <Slider value={ yOffset } onChange={ handleYOffset } max={50} disabled={lockVals} />
-                    </Box>
-                    
-                </Grid>
 
-                <Grid className = {styles.lockButton} xs={3}>
-                    {lockVals && 
-                    <Button variant="contained" onClick={() => setLockVals(!lockVals)}>
-                        <LockIcon />
-                    </Button>
-                        }
-                    {!lockVals &&
-                        <Button variant="contained" onClick={() => setLockVals(!lockVals)}>
-                            <LockOpenIcon />
-                        </Button> 
-                        }
-                        <Button variant="contained" onClick={() => setUp()} disabled={!lockVals}>Start Typing Test</Button>
-                </Grid>
+            {bottomTab === 0 && 
+                <Sliders 
+                keyHeight={keyHeight}
+                keyWidth={keyWidth}
+                yOffset={yOffset}
+                topOffset={topOffset}
+                midOffset={midOffset}
+                botOffset={botOffset}
+                handleKeyWidth={handleKeyWidth}
+                handleKeyHeight={handleKeyHeight}
+                handleYOffset={handleYOffset}
+                handleTopOffset={handleTopOffset}
+                handleMidOffset={handleMidOffset}
+                handleBotOffset={handleBotOffset}
+                setUp={setUp}
+                />
+            }
 
-                <Grid xs={4} item style={{display: "flex", flexDirection: "column", gap: 15}}>
-                    <Box className = {styles.keyboardBoxes}>
-                        <InputLabel>Top Row Offset</InputLabel>
-                        <Slider value={ topOffset } onChange={ handleTopOffset } max={800} disabled={ lockVals }/>
-                    </Box>
-                    
-                    <Box className = {styles.keyboardBoxes}>
-                        <InputLabel>Mid Row Offset</InputLabel>
-                        <Slider value={ midOffset } onChange={ handleMidOffset } max={800} disabled={ lockVals }/>
-                    </Box>
-                    
-                    <Box className = {styles.keyboardBoxes}>
-                        <InputLabel>Bot Row Offset</InputLabel>
-                        <Slider value={ botOffset } onChange={ handleBotOffset } max={800} disabled={ lockVals }/>
-                    </Box>
-
-                    <Box className = {styles.keyboardBoxes}>
-                        <InputLabel>Space Bar Row Offset</InputLabel>
-                        <Slider value={ spaceOffset } onChange={ handleSpaceOffset } max={800} disabled={ lockVals }/>
-                    </Box>
-                </Grid>
-            </Grid>
+            {bottomTab === 1 && 
+                <TypingGame/>
+            }
         </Box>
-        
     );
 }
 

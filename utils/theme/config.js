@@ -14,6 +14,15 @@ const themeOptions = {
         dark: '#757575',
         contrastText: '#000',
       },
+      project: {
+        darkPurple: "#2a1b3d",
+        mediumPurple: "#48318b",
+        lightPurple: "#8765d6",
+        lilac:"#bda7eb",
+        sageGreen:"#59be89",
+        seafoam:"#93e8be",
+        error:"#c33745"
+      },
     },
   };
 

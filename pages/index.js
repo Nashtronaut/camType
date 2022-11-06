@@ -11,6 +11,7 @@ import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
 import Divider from '@mui/material/Divider';
+import Paper from '@mui/material/Paper';
 
 import Container from '@mui/material/Container';
 
@@ -19,17 +20,9 @@ import KeyboardIcon from '@mui/icons-material/Keyboard';
 import Typography from '@mui/material/Typography';
 import CameraGridContainer from '../components/keyboard/CameraGridContainer'
 
-const PlaceholderGame = () => {
-  return (
-    <Box style={{height: 500, border: '1px dotted red'}}>
-        Game box
-    </Box>
-  )
-}
-
 export default function Home() {
 
-  const [showGrid, setShowGrid] = useState(true)
+  const [showGrid, setShowGrid] = useState(false)
   
   const startGame = () => {
     setShowGrid(!showGrid)
@@ -50,38 +43,16 @@ export default function Home() {
           </Typography>
         </Toolbar>
       </AppBar>
-    {/* Component to load after button push here */}
       <main>
       <Container>
-          {/* Camera Component */}
         <Box paddingTop="2rem">
-            {/* Placeholder box for camera display */}
-
-          <CameraGridContainer /> 
-
-            {/* {showGrid && <Box>
-              <Box style={{height: 500, border: '1px dotted green'}}>
-                Grid Box
-              </Box>
-            </Box>}
-
-            {!showGrid && <PlaceholderGame/>} */}
-
-            <Box
-             display="flex"
-             justifyContent="center"
-             paddingTop="2rem"
-            >
-              <Button variant="outlined" color="secondary" onClick={startGame}>
-                {showGrid ? "Start Game" : "Oh no take me back"}
-              </Button>
-            </Box>
+          <CameraGridContainer/> 
         </Box>
       </Container>
-      <Container maxWidth="md">
-          <Box
+      <Container maxWidth="md" sx={{pt:5}}>
+          <Paper elevation={3}
             sx={{
-              pt: 8,
+              pt: 5,
               pb: 6
             }}
           >
@@ -91,8 +62,6 @@ export default function Home() {
             <Box 
             display="flex"
             justifyContent="center" 
-            bgcolor="grey"
-            borderRadius={10}
             >
             <List>
                 <ListItem>
@@ -120,21 +89,17 @@ export default function Home() {
                 </ListItem>
             </List>
           </Box>
-          </Box>
+          </Paper>
         </Container>
       </main>
 
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <span className={styles.logo}>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-          </span>
-        </a>
+      <footer>
+        <Box display="flex" justifyContent="center" sx={{
+              pt: 5,
+              pb: 6
+            }}>
+        <Image src="/favicon.ico" alt="KeyboardCar" width={50} height={50} />
+        </Box>
       </footer>
     </div>
   )
