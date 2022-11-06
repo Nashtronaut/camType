@@ -7,14 +7,20 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px solid red; /* temporary */
+    border: 1px solid rgba(72,49,139, 0.5); /* temporary */
+    -webkit-text-stroke: .8px rgb(54, 6, 54);
+    font-size: 25px;
+    border-radius: .5rem;
 }
 
+
+/*
 .offset {
-    border: 1px solid lime;
+    border: 1px solid rgb(0, 0, 0);
 }
 
 .yOffset {
     border: 1px dotted white;
 }
 
+*/

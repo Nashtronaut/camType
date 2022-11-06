@@ -38,7 +38,7 @@ export default function Home() {
       <AppBar position="static" color="secondary" enableColorOnDark>
         <Toolbar>
           <KeyboardIcon fontSize="large"/>
-          <Typography variant="h6" color="black" noWrap>
+          <Typography variant="h5" color="Indigo" noWrap>
             Keyboard Typing Trainer
           </Typography>
         </Toolbar>
@@ -56,12 +56,14 @@ export default function Home() {
               pb: 6
             }}
           >
-            <Typography variant="h5" align="center"gutterBottom>
+            <Typography variant="h5" color="darkviolet" align="center"gutterBottom >
               Instructions:
             </Typography>
             <Box 
             display="flex"
             justifyContent="center" 
+            color= "indigo"
+            backgroundColor= "mediumpurple"
             >
             <List>
                 <ListItem>
@@ -98,7 +100,7 @@ export default function Home() {
               pt: 5,
               pb: 6
             }}>
-        <Image src="/favicon.ico" alt="KeyboardCar" width={50} height={50} />
+        <Image src="/favicon.ico" alt="KeyboardCat" width={50} height={50} />
         </Box>
       </footer>
     </div>
