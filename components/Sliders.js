@@ -47,7 +47,7 @@ const Sliders = (props) => {
                     </Box>
                 </Grid>
 
-                <Grid style={{display: "flex", gap: "1rem", flexDirection: "column", justifyContent: "center", alignItems: "center" }} item xs={3}>
+                <Grid item style={{display: "flex", gap: "1rem", flexDirection: "column", justifyContent: "center", alignItems: "center" }} xs={3}>
                     {lockVals && 
                     <Button variant="contained" onClick={() => setLockVals(!lockVals)}>
                         <LockIcon />
