@@ -64,6 +64,8 @@ const CameraGridContainer = () => {
     const [topOffset, setTopOffset] = useState(200);
     const [midOffset, setMidOffset] = useState(225);
     const [botOffset, setBotOffset] = useState(250);
+    const [spaceOffset, setSpaceOffset] = useState(100);
+    const [spaceWidth, setSpaceWidth] = useState(100);
     const [lockVals, setLockVals] = useState(false);
 
     const handleKeyWidth = (e, newValue) => {
@@ -90,6 +92,15 @@ const CameraGridContainer = () => {
         setBotOffset(newValue);
     };
 
+    const handleSpaceOffset = (e, newValue) => {
+        setSpaceOffset(newValue);
+    };
+
+    const handleSpaceWidth = (e, newValue) => {
+        setSpaceWidth(newValue);
+    };
+
+
     return(
         <Box>
             <Grid container style={{ position: 'relative', marginBottom: "1rem" }}>
@@ -103,7 +114,9 @@ const CameraGridContainer = () => {
                             yOffset={yOffset}
                             topOffset={topOffset}
                             midOffset={midOffset}
-                            botOffset={botOffset}/>
+                            botOffset={botOffset}
+                            spaceOffset={spaceOffset}
+                            spaceWidth={spaceWidth}/>
                     </Box>
                 </Grid>
             </Grid>
@@ -116,13 +129,19 @@ const CameraGridContainer = () => {
                     
                     <Box style={{border: "1px solid blue", borderRadius: "2rem", padding: "0.8rem, 2rem", padding: "0.2rem 2rem"}}>
                         <InputLabel>Key Height</InputLabel>
-                        <Slider value={ keyHeight } onChange={ handleKeyHeight } min={50} max={160} disabled={lockVals} />
+                        <Slider value={ keyHeight } onChange={ handleKeyHeight } min={50} max={127} disabled={lockVals} />
+                    </Box>
+
+                    <Box style={{border: "1px solid blue", borderRadius: "2rem", padding: "0.8rem, 2rem", padding: "0.2rem 2rem"}}>
+                        <InputLabel>Space Bar Width</InputLabel>
+                        <Slider value={ spaceWidth } onChange={ handleSpaceWidth } min={0} max={1000} disabled={lockVals} />
                     </Box>
                     
                     <Box style={{border: "1px solid blue", borderRadius: "2rem", padding: "0.8rem, 2rem", padding: "0.2rem 2rem"}}>
                         <InputLabel>Slide keyboard Up/Down</InputLabel>
-                        <Slider value={ yOffset } onChange={ handleYOffset } max={79} disabled={lockVals} />
+                        <Slider value={ yOffset } onChange={ handleYOffset } max={50} disabled={lockVals} />
                     </Box>
+                    
                 </Grid>
 
                 <Grid style={{display: "flex", gap: "1rem", flexDirection: "column", justifyContent: "center", alignItems: "center" }} xs={3}>
@@ -153,6 +172,11 @@ const CameraGridContainer = () => {
                     <Box style={{border: "1px solid blue", borderRadius: "2rem", padding: "0.8rem, 2rem", padding: "0.2rem 2rem"}}>
                         <InputLabel>Bot Row Offset</InputLabel>
                         <Slider value={ botOffset } onChange={ handleBotOffset } max={800} disabled={ lockVals }/>
+                    </Box>
+
+                    <Box style={{border: "1px solid blue", borderRadius: "2rem", padding: "0.8rem, 2rem", padding: "0.2rem 2rem"}}>
+                        <InputLabel>Space Bar Row Offset</InputLabel>
+                        <Slider value={ spaceOffset } onChange={ handleSpaceOffset } max={800} disabled={ lockVals }/>
                     </Box>
                 </Grid>
             </Grid>
