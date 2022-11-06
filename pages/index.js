@@ -42,6 +42,14 @@ export default function Home() {
     setShowGrid(true)
   }
 
+  /* 
+  
+  const getReadyCountdown 
+
+
+  
+  onClick = {getReadyCountdown} */
+
   return (
     <div>
       <Head>
@@ -96,11 +104,11 @@ export default function Home() {
                 </ListItem>
                 <Divider/>
                 <ListItem>
-                  <ListItemText primary="Press <START GAME> to activate your camera."/>
+                  <ListItemText primary="Press START GAME to activate your camera."/>
                 </ListItem>
                 <Divider/>
                 <ListItem>
-                  <ListItemText primary="Click and drag to line up the onscreen keyboard with your video feed."/>
+                  <ListItemText primary="Click and drag the sliders to line up the onscreen keyboard with your video feed."/>
                 </ListItem>
                 <Divider/>
                 <ListItem>
@@ -108,11 +116,14 @@ export default function Home() {
                 </ListItem>
                 <Divider/>
                 <ListItem>
-                  <ListItemText primary="Your hands will be recognized and a script will appear for you to type."/>
+                  <ListItemText primary="In three seconds the count will begin and your hands will be recognized and a script will appear for you to type."/>
                 </ListItem>
                 <Divider/>
                 <ListItem>
-                  <ListItemText primary="Type the script and the machine vision technology will analyze your hand posture and WPM."/>
+                  <ListItemText primary="Type the script and the machine vision technology will analyze your hand posture, accuracy, and words per minute."/>
+                </ListItem>
+                <ListItem>
+                  <ListItemText primary= "After one minute the test will conclude and display your results."/>
                 </ListItem>
             </List>
           </Box>
