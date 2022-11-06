@@ -22,12 +22,6 @@ import CameraGridContainer from '../components/keyboard/CameraGridContainer'
 
 export default function Home() {
 
-  const [showGrid, setShowGrid] = useState(false)
-  
-  const startGame = () => {
-    setShowGrid(!showGrid)
-  }
-
   return (
     <div>
       <Head>
@@ -71,15 +65,19 @@ export default function Home() {
                 </ListItem>
                 <Divider/>
                 <ListItem>
-                  <ListItemText primary="Press <button> to activate your camera."/>
+                  <ListItemText primary="Using the sliders, begin resizing the grid to match the keys on your keyboard"/>
                 </ListItem>
                 <Divider/>
                 <ListItem>
-                  <ListItemText primary="Click and drag to line up the onscreen keyboard with your video feed."/>
+                  <ListItemText primary="Press the lock icon to lock your grid in place"/>
                 </ListItem>
                 <Divider/>
                 <ListItem>
-                  <ListItemText primary="Once aligned, lock in the keyboard shape."/>
+                  <ListItemText primary="Press the Start typing button to load the game"/>
+                </ListItem>
+                <Divider/>
+                <ListItem>
+                  <ListItemText primary="Press the ` button to begin typing (Key above TAB)"/>
                 </ListItem>
                 <Divider/>
                 <ListItem>
