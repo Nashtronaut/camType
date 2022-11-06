@@ -3,6 +3,7 @@ import Countdown from './Countdown';
 import compileQuotes from './api/quoteAPI'
 import useKeyPress from './keyboard/useKeyPress';
 
+
 const TypingGame = () => {
 
     useEffect(() => {
