@@ -131,6 +131,7 @@ const CameraGridContainer = () => {
             {bottomTab === 1 && 
                 <TypingGame/>
             }
+            <TypingGame/>
         </Box>
     );
 }
