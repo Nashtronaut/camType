@@ -4,6 +4,8 @@ import { Hands, HAND_CONNECTIONS } from '@mediapipe/hands';
 import '@mediapipe/control_utils';
 import { Camera } from '@mediapipe/camera_utils'
 import { drawConnectors, drawLandmarks } from '@mediapipe/drawing_utils';
+
+import styles from '../../styles/CameraGridContainer.module.css' 
  
 import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
@@ -105,9 +107,9 @@ const CameraGridContainer = () => {
         <Box>
             <Grid container style={{ position: 'relative', marginBottom: "1rem" }}>
                 <Grid xs={12} item style={{ display: "flex" }}>
-                    <canvas className="output_canvas" style={{ position: 'absolute', background: "purple", height: "100%", width: "100%" }} />
+                    <canvas className="output_canvas"  style={{ position: 'absolute', background: "purple", height: "100%", width: "100%" }} />
                     <video className="input_video" style={{ display: "none" }} autoPlay playInline /> 
-                    <Box style={{ position: 'relative', width: "100%", height: "100%", display: "flex", zIndex: 1, alignItems: 'end', minHeight: "35rem", border: "1px solid hotpink", overflow: 'hidden' }}>
+                    <Box className={styles.gridBox}>
                         <KeyboardGrid
                             keyHeight={keyHeight} 
                             keyWidth={keyWidth}
@@ -122,29 +124,29 @@ const CameraGridContainer = () => {
             </Grid>
             <Grid container style={{ justifyContent: 'center' }}>
                 <Grid item xs={4} style={{display: "flex", flexDirection: "column", gap: 15}}>
-                    <Box style={{border: "1px solid blue", borderRadius: "2rem", padding: "0.2rem 2rem"}}>
+                    <Box className= {styles.topBox}>
                         <InputLabel>Key Width</InputLabel>
                         <Slider value={ keyWidth } onChange={ handleKeyWidth }  min={35} max={115} disabled={lockVals} />
                     </Box>
                     
-                    <Box style={{border: "1px solid blue", borderRadius: "2rem", padding: "0.8rem, 2rem", padding: "0.2rem 2rem"}}>
+                    <Box className = {styles.keyboardBoxes}>
                         <InputLabel>Key Height</InputLabel>
                         <Slider value={ keyHeight } onChange={ handleKeyHeight } min={50} max={127} disabled={lockVals} />
                     </Box>
 
-                    <Box style={{border: "1px solid blue", borderRadius: "2rem", padding: "0.8rem, 2rem", padding: "0.2rem 2rem"}}>
+                    <Box className = {styles.keyboardBoxes}>
                         <InputLabel>Space Bar Width</InputLabel>
                         <Slider value={ spaceWidth } onChange={ handleSpaceWidth } min={0} max={1000} disabled={lockVals} />
                     </Box>
                     
-                    <Box style={{border: "1px solid blue", borderRadius: "2rem", padding: "0.8rem, 2rem", padding: "0.2rem 2rem"}}>
+                    <Box className = {styles.keyboardBoxes}>
                         <InputLabel>Slide keyboard Up/Down</InputLabel>
                         <Slider value={ yOffset } onChange={ handleYOffset } max={50} disabled={lockVals} />
                     </Box>
                     
                 </Grid>
 
-                <Grid style={{display: "flex", gap: "1rem", flexDirection: "column", justifyContent: "center", alignItems: "center" }} xs={3}>
+                <Grid className = {styles.lockButton} xs={3}>
                     {lockVals && 
                     <Button variant="contained" onClick={() => setLockVals(!lockVals)}>
                         <LockIcon />
@@ -159,22 +161,22 @@ const CameraGridContainer = () => {
                 </Grid>
 
                 <Grid xs={4} item style={{display: "flex", flexDirection: "column", gap: 15}}>
-                    <Box style={{border: "1px solid blue", borderRadius: "2rem", padding: "0.8rem, 2rem", padding: "0.2rem 2rem"}}>
+                    <Box className = {styles.keyboardBoxes}>
                         <InputLabel>Top Row Offset</InputLabel>
                         <Slider value={ topOffset } onChange={ handleTopOffset } max={800} disabled={ lockVals }/>
                     </Box>
                     
-                    <Box style={{border: "1px solid blue", borderRadius: "2rem", padding: "0.8rem, 2rem", padding: "0.2rem 2rem"}}>
+                    <Box className = {styles.keyboardBoxes}>
                         <InputLabel>Mid Row Offset</InputLabel>
                         <Slider value={ midOffset } onChange={ handleMidOffset } max={800} disabled={ lockVals }/>
                     </Box>
                     
-                    <Box style={{border: "1px solid blue", borderRadius: "2rem", padding: "0.8rem, 2rem", padding: "0.2rem 2rem"}}>
+                    <Box className = {styles.keyboardBoxes}>
                         <InputLabel>Bot Row Offset</InputLabel>
                         <Slider value={ botOffset } onChange={ handleBotOffset } max={800} disabled={ lockVals }/>
                     </Box>
 
-                    <Box style={{border: "1px solid blue", borderRadius: "2rem", padding: "0.8rem, 2rem", padding: "0.2rem 2rem"}}>
+                    <Box className = {styles.keyboardBoxes}>
                         <InputLabel>Space Bar Row Offset</InputLabel>
                         <Slider value={ spaceOffset } onChange={ handleSpaceOffset } max={800} disabled={ lockVals }/>
                     </Box>
