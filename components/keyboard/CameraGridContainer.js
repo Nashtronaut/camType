@@ -1,4 +1,11 @@
 import { useState } from 'react';
+
+import { Hands, HAND_CONNECTIONS } from '@mediapipe/hands';
+import '@mediapipe/control_utils';
+import { Camera } from '@mediapipe/camera_utils'
+import { drawConnectors, drawLandmarks } from '@mediapipe/drawing_utils';
+ 
+import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import InputLabel from '@mui/material/InputLabel';
@@ -6,6 +13,48 @@ import KeyboardGrid from './KeyboardGrid';
 import LockOpenIcon from '@mui/icons-material/LockOpen';
 import LockIcon from '@mui/icons-material/Lock';
 import { Slider } from '@mui/material';
+
+const setUp = () => {
+    const videoElement = document.getElementsByClassName('input_video')[0];
+    const canvasElement = document.getElementsByClassName('output_canvas')[0];
+    const canvasCtx = canvasElement.getContext('2d');
+
+    function onResults(results) {
+        canvasCtx.save();
+        canvasCtx.clearRect(0, 0, canvasElement.width, canvasElement.height);
+        canvasCtx.drawImage(
+            results.image, 0, 0, canvasElement.width, canvasElement.height);
+        if (results.multiHandLandmarks) {
+          for (const landmarks of results.multiHandLandmarks) {
+            drawConnectors(canvasCtx, landmarks, HAND_CONNECTIONS,
+                           {color: '#00FF00', lineWidth: 5});
+            drawLandmarks(canvasCtx, landmarks, {color: '#FF0000', lineWidth: 2});
+          }
+        }
+        canvasCtx.restore();
+      }
+      
+      const hands = new Hands({locateFile: (file) => {
+        return `https://cdn.jsdelivr.net/npm/@mediapipe/hands/${file}`;
+      }});
+      hands.setOptions({
+        maxNumHands: 2,
+        modelComplexity: 1,
+        minDetectionConfidence: 0.5,
+        minTrackingConfidence: 0.5,
+        selfieMode: false, // Flips camera to correct orientation
+      });
+      hands.onResults(onResults);
+      
+      const camera = new Camera(videoElement, {
+        onFrame: async () => {
+          await hands.send({image: videoElement});
+        },
+        width: 1280,
+        height: 720
+      });
+      camera.start();
+};
 
 const CameraGridContainer = () => {
 
@@ -45,7 +94,8 @@ const CameraGridContainer = () => {
         <Box>
             <Grid container style={{ position: 'relative', marginBottom: "1rem" }}>
                 <Grid xs={12} item style={{ display: "flex" }}>
-                    <canvas style={{ position: 'absolute', background: "purple", height: "100%", width: "100%" }} />
+                    <canvas className="output_canvas" style={{ position: 'absolute', background: "purple", height: "100%", width: "100%" }} />
+                    <video className="input_video" style={{ display: "none" }} autoPlay playInline /> 
                     <Box style={{ position: 'relative', width: "100%", height: "100%", display: "flex", zIndex: 1, alignItems: 'end', minHeight: "35rem", border: "1px solid hotpink", overflow: 'hidden' }}>
                         <KeyboardGrid
                             keyHeight={keyHeight} 
@@ -75,13 +125,18 @@ const CameraGridContainer = () => {
                     </Box>
                 </Grid>
 
-                <Grid style={{display: "flex", justifyContent: "center", alignItems: "center" }} xs={3}>
+                <Grid style={{display: "flex", gap: "1rem", flexDirection: "column", justifyContent: "center", alignItems: "center" }} xs={3}>
                     {lockVals && 
-                        <LockIcon onClick={() => setLockVals(!lockVals)} />
+                    <Button variant="contained" onClick={() => setLockVals(!lockVals)}>
+                        <LockIcon />
+                    </Button>
                         }
-                    {!lockVals && 
-                        <LockOpenIcon onClick={() => setLockVals(!lockVals)} />
+                    {!lockVals &&
+                        <Button variant="contained" onClick={() => setLockVals(!lockVals)}>
+                            <LockOpenIcon />
+                        </Button> 
                         }
+                        <Button variant="contained" onClick={() => setUp()} disabled={!lockVals}>Start Typing Test</Button>
                 </Grid>
 
                 <Grid xs={4} item style={{display: "flex", flexDirection: "column", gap: 15}}>

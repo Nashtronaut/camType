@@ -9,53 +9,53 @@ const keyboard = {
         keys: [
             {
                 id: "q",
-                corsx: [,],
-                corsy: [,]
+                xCors: [,],
+                yCors: [,]
             },
             {
                 id: "w",
-                corsx: [,],
-                corsy: [,]
+                xCors: [,],
+                yCors: [,]
             },
             {
                 id: "e",
-                corsx: [,],
-                corsy: [,]
+                xCors: [,],
+                yCors: [,]
             },
             {
                 id: "r",
-                corsx: [,],
-                corsy: [,]
+                xCors: [,],
+                yCors: [,]
             },
             {
                 id: "t",
-                corsx: [,],
-                corsy: [,]
+                xCors: [,],
+                yCors: [,]
             },
             {
                 id: "y",
-                corsx: [,],
-                corsy: [,]
+                xCors: [,],
+                yCors: [,]
             },
             {
                 id: "u",
-                corsx: [,],
-                corsy: [,]
+                xCors: [,],
+                yCors: [,]
             },
             {
                 id: "i",
-                corsx: [,],
-                corsy: [,]
+                xCors: [,],
+                yCors: [,]
             },
             {
                 id: "o",
-                corsx: [,],
-                corsy: [,]
+                xCors: [,],
+                yCors: [,]
             },
             {
                 id: "p",
-                corsx: [,],
-                corsy: [,]
+                xCors: [,],
+                yCors: [,]
             }
         ]
         },
@@ -65,53 +65,53 @@ const keyboard = {
             keys: [
                 {
                     id: "a",
-                    corsx: [,],
-                    corsy: [,]
+                    xCors: [,],
+                    yCors: [,]
                 },
                 {
                     id: "s",
-                    corsx: [,],
-                    corsy: [,]
+                    xCors: [,],
+                    yCors: [,]
                 },
                 {
                     id: "d",
-                    corsx: [,],
-                    corsy: [,]
+                    xCors: [,],
+                    yCors: [,]
                 },
                 {
                     id: "f",
-                    corsx: [,],
-                    corsy: [,]
+                    xCors: [,],
+                    yCors: [,]
                 },
                 {
                     id: "g",
-                    corsx: [,],
-                    corsy: [,]
+                    xCors: [,],
+                    yCors: [,]
                 },
                 {
                     id: "h",
-                    corsx: [,],
-                    corsy: [,]
+                    xCors: [,],
+                    yCors: [,]
                 },
                 {
                     id: "j",
-                    corsx: [,],
-                    corsy: [,]
+                    xCors: [,],
+                    yCors: [,]
                 },
                 {
                     id: "k",
-                    corsx: [,],
-                    corsy: [,]
+                    xCors: [,],
+                    yCors: [,]
                 },
                 {
                     id: "l",
-                    corsx: [,],
-                    corsy: [,]
+                    xCors: [,],
+                    yCors: [,]
                 },
                 {
                     id: ";",
-                    corsx: [,],
-                    corsy: [,]
+                    xCors: [,],
+                    yCors: [,]
                 }
         ]
         },
@@ -121,53 +121,53 @@ const keyboard = {
             keys: [
                 {
                     id: "z",
-                    corsx: [,],
-                    corsy: [,]
+                    xCors: [,],
+                    yCors: [,]
                 },
                 {
                     id: "x",
-                    corsx: [,],
-                    corsy: [,]
+                    xCors: [,],
+                    yCors: [,]
                 },
                 {
                     id: "c",
-                    corsx: [,],
-                    corsy: [,]
+                    xCors: [,],
+                    yCors: [,]
                 },
                 {
                     id: "v",
-                    corsx: [,],
-                    corsy: [,]
+                    xCors: [,],
+                    yCors: [,]
                 },
                 {
                     id: "b",
-                    corsx: [,],
-                    corsy: [,]
+                    xCors: [,],
+                    yCors: [,]
                 },
                 {
                     id: "n",
-                    corsx: [,],
-                    corsy: [,]
+                    xCors: [,],
+                    yCors: [,]
                 },
                 {
                     id: "m",
-                    corsx: [,],
-                    corsy: [,]
+                    xCors: [,],
+                    yCors: [,]
                 },
                 {
                     id: ",",
-                    corsx: [,],
-                    corsy: [,]
+                    xCors: [,],
+                    yCors: [,]
                 },
                 {
                     id: ".",
-                    corsx: [,],
-                    corsy: [,]
+                    xCors: [,],
+                    yCors: [,]
                 },
                 {
                     id: "/",
-                    corsx: [,],
-                    corsy: [,]
+                    xCors: [,],
+                    yCors: [,]
                 }
             ]   
         }   
