@@ -193,7 +193,6 @@ const CameraGridContainer = (props) => {
             {bottomTab === 1 &&
                 <TypingGame incomingCoords={incomingCoords} />
             }
-            <TypingGame/>
         </Box>
     );
 }

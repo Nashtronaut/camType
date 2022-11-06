@@ -50,6 +50,7 @@ const Sliders = (props) => {
                 </Grid>
 
                 <Grid item style={{display: "flex", gap: "1rem", flexDirection: "column", justifyContent: "center", alignItems: "center" }} xs={3}>
+                    <Button variant="contained" onClick={() => { setUp(); }} disabled={lockVals}>Turn on Camera</Button>
                     {lockVals && 
                     <Button variant="contained" onClick={() => setLockVals(!lockVals)}>
                         <LockIcon />

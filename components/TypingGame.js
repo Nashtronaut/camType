@@ -12,7 +12,7 @@ const botRow = ['z', 'x', 'c', 'v', 'b', 'n', 'm', ',', '.', '/'];
 
 const TypingGame = (props) => {
     const incomingCoords = props.incomingCoords;
-
+    const [endGame, setEndGame] = useState(false)
     useEffect(() => {
         const quoteSetter = async () => {
             let genQuote = await compileQuotes()
@@ -22,24 +22,29 @@ const TypingGame = (props) => {
             return
         }
         quoteSetter()
-    }, []);
+    }, [endGame]);
     
     const [generatedQuote, setGeneratedQuote] = useState('')
     const [outgoingChars, setOutgoingChars] = useState('');
     const [currentChar, setCurrentChar] = useState(generatedQuote.charAt(0));
     const [incomingChars, setIncomingChars] = useState(generatedQuote.substr(1));
     const [leftPadding, setLeftPadding] = useState(
-        new Array(20).fill(' ').join('')
+        new Array(32).fill(' ').join('')
       );
     const [startTime, setStartTime] = useState();
     const [wordCount, setWordCount] = useState(0);
     const [wpm, setWpm] = useState(0);
     const [countDown, setCountDown] = useState(60);
     const [startGame, setStartGame] = useState(false)
+    
     const [startHelp, setStartHelp] = useState("")
 
     useKeyPress(key => {
-        
+        if(endGame){
+            setCountDown(60)
+            setEndGame(false)
+            setWpm(0)
+        }
         if (key === "`"){
             setStartGame(true)
             let interval = setInterval(() => {
@@ -50,8 +55,10 @@ const TypingGame = (props) => {
                     setGeneratedQuote("")
                     setCurrentChar("")
                     setIncomingChars("")
+                    setOutgoingChars("")
                     setStartHelp("Great Work!")
                     setCountDown(0)
+                    setEndGame(true)
                   } else {
                     return prevCountdown - 1
                   }
@@ -124,7 +131,7 @@ const TypingGame = (props) => {
   return (
     <Box>
         <p style={{ whiteSpace: "pre", color: "black", textAlign: "center", fontFamily: "monospace", fontSize: "2rem" }}>
-            <span style={{color: "silver"}}>{(leftPadding + outgoingChars).slice(-20)}</span>
+            <span style={{color: "silver"}}>{(leftPadding + outgoingChars).slice(-32)}</span>
             <span style={{backgroundColor: "#09d3ac"}}>{currentChar}</span>
             <span>{incomingChars.substr(0, 45)}</span>
         </p>
