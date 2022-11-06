@@ -44,7 +44,6 @@ const TypingGame = (props) => {
         if(endGame){
             setCountDown(60)
             setEndGame(false)
-            setWpm(0)
             if(currentScore > highScore){
                 setHighScore(currentScore)
             }
@@ -52,6 +51,7 @@ const TypingGame = (props) => {
         }
         if (key === "`"){
             setStartGame(true)
+            setWpm(0)
             let interval = setInterval(() => {
                 setCountDown((prevCountdown) => {
                   if (prevCountdown === 0) {
