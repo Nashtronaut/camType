@@ -1,6 +1,6 @@
 const URL = 'https://programming-quotes-api.herokuapp.com/quotes/random';
 
-const QUOTE_LENGTH = 20; //ADJUSTS LENGTH OF QUOTE. 
+const QUOTE_LENGTH = 10; //ADJUSTS LENGTH OF QUOTE. 
 
 const compileQuotes = async () => {
     let quote = "";

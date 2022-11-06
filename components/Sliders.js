@@ -34,17 +34,17 @@ const Sliders = (props) => {
     return(
         <Grid container style={{ justifyContent: 'center' }}>
                 <Grid item xs={4} style={{display: "flex", flexDirection: "column", gap: 15}}>
-                    <Box style={{border: "1px solid rgba(42,27,61,255)", backgroundColor: "rgba(135,101,214,255)", borderRadius: "2rem", padding: "0.2rem 2rem"}}>
+                    <Box style={{border: "1px solid rgba(42,27,61,255)", boxShadow: "rgba(0, 0, 0, 0.35) 0px -50px 36px -28px inset", backgroundColor: "rgba(135,101,214,255)", borderRadius: "2rem", padding: "0.2rem 2rem"}}>
                         <InputLabel style={{ color: "white" }}>Key Width</InputLabel>
                         <Slider style={{color: '#93e8be'}} value={ keyWidth } onChange={ handleKeyWidth }  min={35} max={115} disabled={lockVals} />
                     </Box>
                     
-                    <Box style={{border: "1px solid rgba(42,27,61,255)", backgroundColor: "rgba(135,101,214,255)", borderRadius: "2rem", padding: "0.8rem, 2rem", padding: "0.2rem 2rem"}}>
+                    <Box style={{border: "1px solid rgba(42,27,61,255)", backgroundColor: "rgba(135,101,214,255)", boxShadow: "rgba(0, 0, 0, 0.35) 0px -50px 36px -28px inset",  borderRadius: "2rem", padding: "0.8rem, 2rem", padding: "0.2rem 2rem"}}>
                         <InputLabel style={{ color: "white" }}>Key Height</InputLabel>
                         <Slider style={{color: '#93e8be'}} value={ keyHeight } onChange={ handleKeyHeight } min={50} max={160} disabled={lockVals} />
                     </Box>
                     
-                    <Box style={{border: "1px solid rgba(42,27,61,255)", backgroundColor: "rgba(135,101,214,255)", borderRadius: "2rem", padding: "0.8rem, 2rem", padding: "0.2rem 2rem"}}>
+                    <Box style={{border: "1px solid rgba(42,27,61,255)", backgroundColor: "rgba(135,101,214,255)", boxShadow: "rgba(0, 0, 0, 0.35) 0px -50px 36px -28px inset", borderRadius: "2rem", padding: "0.8rem, 2rem", padding: "0.2rem 2rem"}}>
                         <InputLabel style={{ color: "white" }}>Slide keyboard Up/Down</InputLabel>
                         <Slider style={{color: '#93e8be'}} value={ yOffset } onChange={ handleYOffset } max={400} disabled={lockVals} />
                     </Box>
@@ -66,17 +66,17 @@ const Sliders = (props) => {
                 </Grid>
 
                 <Grid xs={4} item style={{display: "flex", flexDirection: "column", gap: 15}}>
-                    <Box style={{border: "1px solid rgba(42,27,61,255)", backgroundColor: "rgba(135,101,214,255)", borderRadius: "2rem", padding: "0.8rem, 2rem", padding: "0.2rem 2rem"}}>
+                    <Box style={{border: "1px solid rgba(42,27,61,255)", backgroundColor: "rgba(135,101,214,255)", boxShadow: "rgba(0, 0, 0, 0.35) 0px -50px 36px -28px inset",  borderRadius: "2rem", padding: "0.8rem, 2rem", padding: "0.2rem 2rem"}}>
                         <InputLabel style={{ color: "white" }}>Top Row Offset</InputLabel>
                         <Slider style={{color: '#93e8be'}} value={ topOffset } onChange={ handleTopOffset } max={800} disabled={ lockVals }/>
                     </Box>
                     
-                    <Box style={{border: "1px solid rgba(42,27,61,255)", backgroundColor: "rgba(135,101,214,255)", borderRadius: "2rem", padding: "0.2rem 2rem"}}>
+                    <Box style={{border: "1px solid rgba(42,27,61,255)", backgroundColor: "rgba(135,101,214,255)", boxShadow: "rgba(0, 0, 0, 0.35) 0px -50px 36px -28px inset",  borderRadius: "2rem", padding: "0.2rem 2rem"}}>
                         <InputLabel style={{ color: "white" }}>Mid Row Offset</InputLabel>
                         <Slider style={{color: '#93e8be'}} value={ midOffset } onChange={ handleMidOffset } max={800} disabled={ lockVals }/>
                     </Box>
                     
-                    <Box style={{border: "1px solid rgba(42,27,61,255)", backgroundColor: "rgba(135,101,214,255)", borderRadius: "2rem", padding: "0.2rem 2rem"}}>
+                    <Box style={{border: "1px solid rgba(42,27,61,255)", backgroundColor: "rgba(135,101,214,255)", boxShadow: "rgba(0, 0, 0, 0.35) 0px -50px 36px -28px inset",  borderRadius: "2rem", padding: "0.2rem 2rem"}}>
                         <InputLabel style={{ color: "white" }}>Bot Row Offset</InputLabel>
                         <Slider style={{color: '#93e8be'}} value={ botOffset } onChange={ handleBotOffset } max={800} disabled={ lockVals }/>
                     </Box>

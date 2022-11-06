@@ -73,8 +73,8 @@ const CameraGridContainer = (props) => {
             if (results.multiHandLandmarks) {
               for (const landmarks of results.multiHandLandmarks) {
                 drawConnectors(canvasCtx, landmarks, HAND_CONNECTIONS,
-                               {color: '#00FF00', lineWidth: 1});
-                drawLandmarks(canvasCtx, landmarks, {color: '#FF0000', lineWidth: 1, radius: 2 });
+                               {color: '#48318b', lineWidth: 1});
+                drawLandmarks(canvasCtx, landmarks, {color: '"#93e8be', lineWidth: 1, radius: 1.2 });
               }
     
               if (results.multiHandLandmarks.length > 1) {

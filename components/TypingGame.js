@@ -82,6 +82,7 @@ const TypingGame = (props) => {
               }
             if(key !== currentChar){
                 setCurrentScore(currentScore -10)
+                
             }
             
             if (key === currentChar) {
