@@ -56,13 +56,16 @@ export default function Home() {
           {/* Camera Component */}
         <Box paddingTop="2rem">
             {/* Placeholder box for camera display */}
-            {showGrid && <Box>
+
+          <CameraGridContainer /> 
+
+            {/* {showGrid && <Box>
               <Box style={{height: 500, border: '1px dotted green'}}>
                 Grid Box
               </Box>
             </Box>}
 
-            {!showGrid && <PlaceholderGame/>}
+            {!showGrid && <PlaceholderGame/>} */}
 
             <Box
              display="flex"
