@@ -2,8 +2,15 @@ import { useState, useEffect } from 'react'
 import Countdown from './Countdown';
 import compileQuotes from './api/quoteAPI'
 import useKeyPress from './keyboard/useKeyPress';
+import keyboard from './keyboard/keyboard.js';
 
-const TypingGame = () => {
+const topRow = ['q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p'];
+const midRow = ['a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', ';'];
+const botRow = ['z', 'x', 'c', 'v', 'b', 'n', 'm', ',', '.', '/'];
+
+
+const TypingGame = (props) => {
+    const incomingCoords = props.incomingCoords;
 
     useEffect(() => {
         const quoteSetter = async () => {
@@ -15,7 +22,7 @@ const TypingGame = () => {
         }
         quoteSetter()
     }, [])
-    
+ 
     const [generatedQuote, setGeneratedQuote] = useState('')
     const [outgoingChars, setOutgoingChars] = useState('');
     const [currentChar, setCurrentChar] = useState(generatedQuote.charAt(0));
@@ -28,8 +35,38 @@ const TypingGame = () => {
 
         let updatedOutgoingChars = outgoingChars;
         let updatedIncomingChars = incomingChars;
-        
+
         if (key === currentChar) {
+
+          if (topRow.includes(key) || midRow.includes(key) || botRow.includes(key)) {
+            if (topRow.includes(key.toLowerCase())) {
+                let coords = keyboard.rows[0].keys.filter((key) => {
+                  if (key.id === currentChar) {
+                    return key;
+                  }
+                })
+                console.log(coords);
+            }
+
+            if (midRow.includes(key.toLowerCase())) {
+              let coords = keyboard.rows[1].keys.filter((key) => {
+                if (key.id === currentChar) {
+                  return key;
+                }
+              })
+              console.log(coords);
+            }
+
+            if (botRow.includes(key.toLowerCase())){
+              let coords = keyboard.rows[2].keys.filter((key) => {
+                if (key.id === currentChar) {
+                  return key;
+                }
+              })
+              console.log(coords);
+            }
+          }
+
           if (leftPadding.length > 0) {
             setLeftPadding(leftPadding.substring(1));
           }
@@ -54,4 +91,5 @@ const TypingGame = () => {
     </p>
   );
 };
+
 export default TypingGame;
