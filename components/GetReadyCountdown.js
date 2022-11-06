@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 
 import Box from '@mui/material/Box';
 
-const GetReady = () => {
+const GetReadyCountdown = () => {
   const [counter, setCounter] = useState(3);
 
 useEffect(() => {

@@ -6,10 +6,9 @@ const compileQuotes = async () => {
     let quote = "";
 
     for (let i = 0; i < QUOTE_LENGTH; i++) {
-        quote += " " + await callQuote();
+        quote += await callQuote() + " ";
     }
-    console.log(quote);
-    return quote;
+    return quote.trim();
 }
 
 const callQuote = async () => {
