@@ -13,5 +13,8 @@ const compileQuotes = () => {
 const callQuote = () => {
     fetch(URL).then((response) => {
         return response.json();
+    }).then((data)=> {
+        return data
     })
 };
+export default compileQuotes;

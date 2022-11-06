@@ -18,26 +18,17 @@ import Toolbar from '@mui/material/Toolbar';
 import KeyboardIcon from '@mui/icons-material/Keyboard';
 import Typography from '@mui/material/Typography';
 
-import Countdown from '../components/Countdown';
 import CameraGridContainer from '../components/keyboard/CameraGridContainer'
-import KeyboardGrid from '../components/keyboard/KeyboardGrid'
-
-const PlaceholderGame = () => {
-  return (
-    <Box style={{height: 500, border: '1px dotted red'}}>
-        Game box
-    </Box>
-  )
-}
-
+import TypeGame from '../components/TypingGame'
 
 export default function Home() {
 
   const [showGrid, setShowGrid] = useState(false)
+  const [startGame, setStartGame] = useState(false)
   
-  const startGame = () => {
+  const launchCamera = () => {
     if (showGrid){
-      console.log("start game")
+      setStartGame(true)
     }
     setShowGrid(true)
   }
@@ -59,6 +50,10 @@ export default function Home() {
       </AppBar>
       <main>
       <Container>
+        <Box bgcolor="white" display="flex" justifyContent="center">
+          {startGame && <TypeGame/>}
+        </Box>
+        
           {/* Camera Component */}
         <Box paddingTop="2rem">
             {/* {!showGrid && <PlaceholderGame/>}
@@ -67,7 +62,7 @@ export default function Home() {
             {showGrid && <CameraGridContainer/>}
             
             <Box display="flex" justifyContent="center" paddingTop="2rem">
-              <Button variant="outlined" color="secondary" onClick={startGame}>
+              <Button variant="outlined" color="primary" onClick={launchCamera}>
                 {!showGrid ? "Start Game" : "Press again to confirm key alignment"}
               </Button>
             </Box>

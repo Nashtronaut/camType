@@ -1,16 +1,23 @@
 import { useState, useEffect } from "react";
 
 import Box from '@mui/material/Box';
+import Typography from '@mui/material/Typography';
 
 const Countdown = () => {
   const [counter, setCounter] = useState(60);
 
-useEffect(() => {
+  const startCounter = () => {
+  console.log('key down')
+}
+
+  useEffect(() => {
     counter > 0 && setTimeout(() => setCounter(counter - 1), 1000);
   }, [counter]);
 
   return (
-      <Box>Countdown: {counter}</Box>
+    <Typography variant="h5" color="black" align="center" onKeyDown={startCounter}>
+      Countdown: {counter}
+    </Typography>     
   );
 }
 
