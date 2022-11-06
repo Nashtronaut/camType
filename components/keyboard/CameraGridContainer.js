@@ -154,6 +154,7 @@ const CameraGridContainer = () => {
                     <canvas className="output_canvas"  style={{ position: 'absolute', background: "purple", height: "100%", width: "100%", transform: "rotate(180deg)"}} />
                     <video className="input_video" style={{ display: "none" }} autoPlay playinline /> 
                     <Box style={{ position: 'relative', width: "100%", height: "100%", display: "flex", zIndex: 1, alignItems: 'end', minWidth: `${screenWidth}px`, maxWidth: `${screenWidth}px`, minHeight: `${screenHeight}px`, maxHeight: `${screenHeight}px`, overflow: 'hidden' }}>
+
                         <KeyboardGrid
                             keyHeight={keyHeight}
                             keyWidth={keyWidth}
@@ -190,6 +191,7 @@ const CameraGridContainer = () => {
             {bottomTab === 1 &&
                 <TypingGame incomingCoords={incomingCoords} />
             }
+            <TypingGame/>
         </Box>
     );
 }
