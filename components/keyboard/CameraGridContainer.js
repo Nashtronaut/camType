@@ -60,7 +60,7 @@ const CameraGridContainer = () => {
 
     const [keyHeight, setKeyHeight] = useState(70);
     const [keyWidth, setKeyWidth] = useState(70);
-    const [yOffset, setYOffset] = useState(300);
+    const [yOffset, setYOffset] = useState(25);
     const [topOffset, setTopOffset] = useState(200);
     const [midOffset, setMidOffset] = useState(225);
     const [botOffset, setBotOffset] = useState(250);
