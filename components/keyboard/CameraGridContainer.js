@@ -73,8 +73,8 @@ const CameraGridContainer = (props) => {
             if (results.multiHandLandmarks) {
               for (const landmarks of results.multiHandLandmarks) {
                 drawConnectors(canvasCtx, landmarks, HAND_CONNECTIONS,
-                               {color: '#00FF00', lineWidth: 1});
-                drawLandmarks(canvasCtx, landmarks, {color: '#FF0000', lineWidth: 1, radius: 2 });
+                               {color: '#48318b', lineWidth: 1});
+                drawLandmarks(canvasCtx, landmarks, {color: '"#93e8be', lineWidth: 1, radius: 1.2 });
               }
     
               if (results.multiHandLandmarks.length > 1) {
@@ -152,10 +152,9 @@ const CameraGridContainer = (props) => {
         <Box>
             <Grid container style={{ position: 'relative', marginBottom: "1rem" }}>
                 <Grid xs={12} item style={{ display: "flex" }}>
-                    <canvas className="output_canvas"  style={{ position: 'absolute', background: "purple", height: "100%", width: "100%", transform: "rotate(180deg)"}} />
-                    <video className="input_video" style={{ display: "none" }} autoPlay playinline /> 
-                    <Box style={{ position: 'relative', width: "100%", height: "100%", display: "flex", zIndex: 1, alignItems: 'end', minWidth: `${screenWidth}px`, maxWidth: `${screenWidth}px`, minHeight: `${screenHeight}px`, maxHeight: `${screenHeight}px`, overflow: 'hidden' }}>
-
+                    <canvas className="output_canvas"  style={{border: '10px solid rgba(135,101,214,255)', borderRadius: '1rem' , position: 'absolute', background: "#8ee2b8", height: "100%", width: "100%"}} />
+                    <video className="input_video" style={{ display: "none" }} autoPlay playInline /> 
+                    <Box style={{ position: 'relative', display: "flex", zIndex: 1, alignItems: 'end', minWidth: `${screenWidth}px`, minHeight: `${screenHeight}px`, maxHeight: `${screenHeight}px`, overflow: 'hidden' }}>
                         <KeyboardGrid
                             keyHeight={keyHeight}
                             keyWidth={keyWidth}

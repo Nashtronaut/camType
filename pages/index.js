@@ -54,11 +54,14 @@ export default function Home() {
       </Container>
 
 {showBoard &&
-      <Container maxWidth="md" sx={{pt:5}}>
+      <Container maxWidth="md" sx={{pt:2}}>
           <Paper elevation={3}
             sx={{
-              pt: 5,
-              pb: 6
+              pt: 3,
+              pb: 2,
+              background: 'rgba(255,255,255,0.2)',
+              color: 'white',
+              borderRadius: "2rem"
             }}
           >
             <Typography variant="h5" align="center"gutterBottom>
@@ -113,4 +116,5 @@ export default function Home() {
       </footer>
     </div>
   )
-}
+          }
+          

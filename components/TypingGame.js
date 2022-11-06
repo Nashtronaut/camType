@@ -82,6 +82,7 @@ const TypingGame = (props) => {
               }
             if(key !== currentChar){
                 setCurrentScore(currentScore -10)
+                
             }
             
             if (key === currentChar) {
@@ -139,13 +140,13 @@ const TypingGame = (props) => {
 
   return (
     <Box>
-        <p style={{ whiteSpace: "pre", color: "black", textAlign: "center", fontFamily: "monospace", fontSize: "2rem" }}>
+        <p style={{ whiteSpace: "pre", color: "black", padding: "0.7rem", borderRadius: '1.8rem', background: "white", textAlign: "center", fontFamily: "monospace", fontSize: "2rem" }}>
             <span style={{color: "silver"}}>{(leftPadding + outgoingChars).slice(-32)}</span>
             <span style={{backgroundColor: "#09d3ac"}}>{currentChar}</span>
-            <span>{incomingChars.substr(0, 45)}</span>
+            <span>{incomingChars.substr(0, 25)}</span>
         </p>
-        <h3 style={{textAlign: "center", fontFamily: "monospace", fontSize: "1.5rem"}}>WPM: {wpm} | Time Left: {countDown} | Score: {currentScore} | High Score: {highScore}</h3>
-        {!startGame && <h4 style={{textAlign: "center", fontFamily: "monospace", fontSize: "1.2rem"}}> {startHelp}</h4>}
+        <h3 style={{textAlign: "center", color: "black", fontFamily: "monospace", fontSize: "1.5rem", padding: '0.8rem', borderRadius: "1.8rem", background: "#09d3ac"}}>WPM: {wpm} | Time Left: {countDown} | Score: {currentScore} | High Score: {highScore}</h3>
+        {!startGame && <h4 style={{textAlign: "center", color: "white",fontFamily: "monospace", fontSize: "1.2rem"}}> {startHelp}</h4>}
     </Box>
   );
 };

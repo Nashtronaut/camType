@@ -7,14 +7,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px solid red; /* temporary */
+    background: rgba(255, 255, 255, 0.55);
+    border: 1px solid rgba(72,49,139, 0.5); /* temporary */
+    -webkit-text-stroke: .8px rgb(54, 6, 54);
+    font-size: 25px;
+    border-radius: .5rem;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
-
-.offset {
-    border: 1px solid lime;
-}
-
-.yOffset {
-    border: 1px dotted white;
-}
-
