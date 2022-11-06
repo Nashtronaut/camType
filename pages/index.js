@@ -17,29 +17,23 @@ import Container from '@mui/material/Container';
 import Toolbar from '@mui/material/Toolbar';
 import KeyboardIcon from '@mui/icons-material/Keyboard';
 import Typography from '@mui/material/Typography';
-
 import CameraGridContainer from '../components/keyboard/CameraGridContainer'
-import TypeGame from '../components/TypingGame'
+
+const PlaceholderGame = () => {
+  return (
+    <Box style={{height: 500, border: '1px dotted red'}}>
+        Game box
+    </Box>
+  )
+}
 
 export default function Home() {
 
-  const [showGrid, setShowGrid] = useState(false)
-  const [startGame, setStartGame] = useState(false)
+  const [showGrid, setShowGrid] = useState(true)
   
-  const launchCamera = () => {
-    if (showGrid){
-      setStartGame(true)
-    }
-    setShowGrid(true)
+  const startGame = () => {
+    setShowGrid(!showGrid)
   }
-
-  /* 
-  
-  const getReadyCountdown 
-
-
-  
-  onClick = {getReadyCountdown} */
 
   return (
     <div>
@@ -56,25 +50,32 @@ export default function Home() {
           </Typography>
         </Toolbar>
       </AppBar>
+    {/* Component to load after button push here */}
       <main>
       <Container>
-        <Box bgcolor="white" display="flex" justifyContent="center">
-          {startGame && <TypeGame/>}
-        </Box>
-        
           {/* Camera Component */}
         <Box paddingTop="2rem">
-            {/* {!showGrid && <PlaceholderGame/>}
-            {!showGrid && <Countdown/>} */}
+            {/* Placeholder box for camera display */}
 
-            {showGrid && <CameraGridContainer/>}
-            
-            <Box display="flex" justifyContent="center" paddingTop="2rem">
-              <Button variant="outlined" color="primary" onClick={launchCamera}>
-                {!showGrid ? "Start Game" : "Press again to confirm key alignment"}
+          <CameraGridContainer /> 
+
+            {/* {showGrid && <Box>
+              <Box style={{height: 500, border: '1px dotted green'}}>
+                Grid Box
+              </Box>
+            </Box>}
+
+            {!showGrid && <PlaceholderGame/>} */}
+
+            <Box
+             display="flex"
+             justifyContent="center"
+             paddingTop="2rem"
+            >
+              <Button variant="outlined" color="secondary" onClick={startGame}>
+                {showGrid ? "Start Game" : "Oh no take me back"}
               </Button>
             </Box>
-            {!showGrid && <Typography variant="h6" textAlign="center" paddingTop="2rem">Note: starting game will request usage of your camera</Typography>}
         </Box>
       </Container>
       <Container maxWidth="md">
@@ -99,26 +100,23 @@ export default function Home() {
                 </ListItem>
                 <Divider/>
                 <ListItem>
-                  <ListItemText primary="Press START GAME to activate your camera."/>
+                  <ListItemText primary="Press <button> to activate your camera."/>
                 </ListItem>
                 <Divider/>
                 <ListItem>
-                  <ListItemText primary="Click and drag the sliders to line up the onscreen keyboard with your video feed."/>
+                  <ListItemText primary="Click and drag to line up the onscreen keyboard with your video feed."/>
                 </ListItem>
                 <Divider/>
                 <ListItem>
-                  <ListItemText primary="Once aligned, lock in the keyboard shape by pressing the button again."/>
+                  <ListItemText primary="Once aligned, lock in the keyboard shape."/>
                 </ListItem>
                 <Divider/>
                 <ListItem>
-                  <ListItemText primary="In three seconds the count will begin and your hands will be recognized and a script will appear for you to type."/>
+                  <ListItemText primary="Your hands will be recognized and a script will appear for you to type."/>
                 </ListItem>
                 <Divider/>
                 <ListItem>
-                  <ListItemText primary="Type the script and the machine vision technology will analyze your hand posture, accuracy, and words per minute."/>
-                </ListItem>
-                <ListItem>
-                  <ListItemText primary= "After one minute the test will conclude and display your results."/>
+                  <ListItemText primary="Type the script and the machine vision technology will analyze your hand posture and WPM."/>
                 </ListItem>
             </List>
           </Box>
