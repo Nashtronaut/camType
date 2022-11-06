@@ -96,7 +96,7 @@ const CameraGridContainer = () => {
             <Grid container style={{ position: 'relative', marginBottom: "1rem" }}>
                 <Grid xs={12} item style={{ display: "flex" }}>
                     <canvas className="output_canvas"  style={{ position: 'absolute', background: "purple", height: "100%", width: "100%"}} />
-                    <video className="input_video" style={{ display: "none" }} autoPlay playInline /> 
+                    <video className="input_video" style={{ display: "none" }} autoPlay playsInline /> 
                     <Box style={{ position: 'relative', width: "100%", height: "100%", display: "flex", zIndex: 1, alignItems: 'end', minHeight: "35rem", maxHeight: "35rem", border: "1px solid hotpink", overflow: 'hidden' }}>
                         <KeyboardGrid
                             keyHeight={keyHeight}
