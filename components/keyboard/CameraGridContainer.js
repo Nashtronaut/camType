@@ -9,6 +9,7 @@ import KeyboardGrid from './KeyboardGrid';
 import Sliders from '../Sliders';
 import Tabs from '@mui/material/Tabs'
 import Tab from '@mui/material/Tab'
+import TypingGame from '../TypingGame';
 
 const setUp = () => {
     const videoElement = document.getElementsByClassName('input_video')[0];
@@ -128,8 +129,7 @@ const CameraGridContainer = () => {
             }
 
             {bottomTab === 1 && 
-                // Please place typing game here. 
-                <p>typing game.</p> // delete
+                <TypingGame/>
             }
         </Box>
         

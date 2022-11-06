@@ -46,20 +46,10 @@ export default function Home() {
       <main>
       <Container>
         <Box paddingTop="2rem">
-        {showGrid && <CameraGridContainer/>} 
-
-            <Box
-             display="flex"
-             justifyContent="center"
-             paddingTop="2rem"
-            >
-              <Button variant="outlined" color="primary" onClick={startGame}>
-                {!showGrid ? "Start Game" : "Oh no take me back"}
-              </Button>
-            </Box>
+          <CameraGridContainer/> 
         </Box>
       </Container>
-      <Container maxWidth="md">
+      <Container maxWidth="md" sx={{pt:5}}>
           <Paper elevation={3}
             sx={{
               pt: 5,
@@ -104,12 +94,12 @@ export default function Home() {
       </main>
 
       <footer>
-        <Container display="flex" sx={{
+        <Box display="flex" justifyContent="center" sx={{
               pt: 5,
               pb: 6
             }}>
         <Image src="/favicon.ico" alt="KeyboardCar" width={50} height={50} />
-        </Container>
+        </Box>
       </footer>
     </div>
   )
