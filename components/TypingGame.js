@@ -1,26 +1,17 @@
-import { useState } from 'react'
-
+import { useState, useEffect } from 'react'
 import Countdown from './Countdown';
 import compileQuotes from './api/quoteAPI'
-import useKeyPress from '../utils/hooks/useKeyPress';
-
-import Box from '@mui/material/Box';
-import Button from '@mui/material/Button'
-import Container from '@mui/material/Container';
-import Divider from '@mui/material/Divider';
-import Typography from '@mui/material/Typography';
-
-let generatedQuote = "lorem ipsum dolor sit amet lorem ipsum dolor lorem ipsum dolor"
+import useKeyPress from './keyboard/useKeyPress';
+import compileQuotes from '../components/api/quoteAPI.js';
 
 const TypingGame = () => {
 
-    console.log(generatedQuote)
-    const [leftPadding, setLeftPadding] = useState(
-        new Array(20).fill(' ').join(''),
-      );
     const [outgoingChars, setOutgoingChars] = useState('');
     const [currentChar, setCurrentChar] = useState(generatedQuote.charAt(0));
     const [incomingChars, setIncomingChars] = useState(generatedQuote.substr(1));
+    const [leftPadding, setLeftPadding] = useState(
+        new Array(20).fill(' ').join('')
+      );
 
     useKeyPress(key => {
 
