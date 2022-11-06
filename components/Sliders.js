@@ -26,6 +26,7 @@ const Sliders = (props) => {
     const handleBotOffset = props.handleBotOffset;
     const setUp = props.setUp;
     const setBottomTab = props.setBottomTab;
+    const setShowBoard = props.setShowBoard;
 
     const [lockVals, setLockVals] = useState(false);
 
@@ -50,6 +51,7 @@ const Sliders = (props) => {
                 </Grid>
 
                 <Grid item style={{display: "flex", gap: "1rem", flexDirection: "column", justifyContent: "center", alignItems: "center" }} xs={3}>
+                    <Button variant="contained" onClick={() => { setUp(); }} disabled={lockVals}>Turn on Camera</Button>
                     {lockVals && 
                     <Button variant="contained" onClick={() => setLockVals(!lockVals)}>
                         <LockIcon />
@@ -60,7 +62,7 @@ const Sliders = (props) => {
                             <LockOpenIcon />
                         </Button> 
                         }
-                        <Button variant="contained" onClick={(e) => {setBottomTab(1); setUp();}} disabled={!lockVals}>Start Typing Test</Button>
+                        <Button variant="contained" onClick={(e) => {setBottomTab(1); setUp(); setShowBoard();}} disabled={!lockVals}>Start Typing Test</Button>
                 </Grid>
 
                 <Grid xs={4} item style={{display: "flex", flexDirection: "column", gap: 15}}>
