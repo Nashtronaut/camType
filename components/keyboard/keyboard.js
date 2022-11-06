@@ -57,8 +57,7 @@ const keyboard = {
                 xCors: [,],
                 yCors: [,]
             }
-        ]
-        },
+        ]},
         {
             id: "midRow",
             offset: 0,
@@ -113,8 +112,7 @@ const keyboard = {
                     xCors: [,],
                     yCors: [,]
                 }
-        ]
-        },
+        ]},
         {
             id: "botRow",
             offset: 0,
@@ -169,8 +167,7 @@ const keyboard = {
                     xCors: [,],
                     yCors: [,]
                 }
-        ]
-        },   
+        ]},
     ]
 };
 

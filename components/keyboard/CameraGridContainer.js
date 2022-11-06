@@ -4,13 +4,10 @@ import { Hands, HAND_CONNECTIONS } from '@mediapipe/hands';
 import '@mediapipe/control_utils';
 import { Camera } from '@mediapipe/camera_utils'
 import { drawConnectors, drawLandmarks } from '@mediapipe/drawing_utils';
-import Button from '@mui/material/Button';
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import KeyboardGrid from './KeyboardGrid';
 import Sliders from '../Sliders';
-import Tabs from '@mui/material/Tabs'
-import Tab from '@mui/material/Tab'
 import TypingGame from '../TypingGame';
 
 const setUp = () => {
@@ -107,9 +104,7 @@ const CameraGridContainer = () => {
                             yOffset={yOffset}
                             topOffset={topOffset}
                             midOffset={midOffset}
-                            botOffset={botOffset}
-                            spaceOffset={spaceOffset}
-                            spaceWidth={spaceWidth}/>
+                            botOffset={botOffset} />
                     </Box>
                 </Grid>
             </Grid>

@@ -29,7 +29,7 @@ const KeyboardGrid = (props) => {
                             row.keys[index].xCors[0] = leftSide;
                             row.keys[index].xCors[1] = leftSide + keyboard.keyWidth;
 
-                            let rowNum = 3;
+                            let rowNum = 2;
                             let bottomSide = keyboard.yOffset + rowNum * keyboard.keyHeight;
                             
                             row.keys[index].yCors[0] = bottomSide;
