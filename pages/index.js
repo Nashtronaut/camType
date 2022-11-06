@@ -49,48 +49,50 @@ export default function Home() {
           <CameraGridContainer />
         </Box>
       </Container>
-      <Container maxWidth="md" sx={{pt:5}}>
-          <Paper elevation={3}
-            sx={{
-              pt: 5,
-              pb: 6
-            }}
-          >
-            <Typography variant="h5" align="center"gutterBottom>
-              Instructions:
-            </Typography>
-            <Box 
-            display="flex"
-            justifyContent="center" 
-            >
-            <List>
-                <ListItem>
-                  <ListItemText primary="Ensure your keyboard is in view of your webcam or camera."/>
-                </ListItem>
-                <Divider/>
-                <ListItem>
-                  <ListItemText primary="Press <button> to activate your camera."/>
-                </ListItem>
-                <Divider/>
-                <ListItem>
-                  <ListItemText primary="Click and drag to line up the onscreen keyboard with your video feed."/>
-                </ListItem>
-                <Divider/>
-                <ListItem>
-                  <ListItemText primary="Once aligned, lock in the keyboard shape."/>
-                </ListItem>
-                <Divider/>
-                <ListItem>
-                  <ListItemText primary="Your hands will be recognized and a script will appear for you to type."/>
-                </ListItem>
-                <Divider/>
-                <ListItem>
-                  <ListItemText primary="Type the script and the machine vision technology will analyze your hand posture and WPM."/>
-                </ListItem>
-            </List>
-          </Box>
-          </Paper>
-        </Container>
+      {showGrid && 
+           <Container maxWidth="md" sx={{pt:5}}>
+           <Paper elevation={3}
+             sx={{
+               pt: 5,
+               pb: 6
+             }}
+           >
+             <Typography variant="h5" align="center"gutterBottom>
+               Instructions:
+             </Typography>
+             <Box 
+             display="flex"
+             justifyContent="center" 
+             >
+             <List>
+                 <ListItem>
+                   <ListItemText primary="Ensure your keyboard is in view of your webcam or camera."/>
+                 </ListItem>
+                 <Divider/>
+                 <ListItem>
+                   <ListItemText primary="Press <button> to activate your camera."/>
+                 </ListItem>
+                 <Divider/>
+                 <ListItem>
+                   <ListItemText primary="Click and drag to line up the onscreen keyboard with your video feed."/>
+                 </ListItem>
+                 <Divider/>
+                 <ListItem>
+                   <ListItemText primary="Once aligned, lock in the keyboard shape."/>
+                 </ListItem>
+                 <Divider/>
+                 <ListItem>
+                   <ListItemText primary="Your hands will be recognized and a script will appear for you to type."/>
+                 </ListItem>
+                 <Divider/>
+                 <ListItem>
+                   <ListItemText primary="Type the script and the machine vision technology will analyze your hand posture and WPM."/>
+                 </ListItem>
+             </List>
+           </Box>
+           </Paper>
+         </Container>
+      }
       </main>
 
       <footer>

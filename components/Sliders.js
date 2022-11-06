@@ -24,6 +24,7 @@ const Sliders = (props) => {
     const handleMidOffset = props.handleMidOffset;
     const handleBotOffset = props.handleBotOffset;
     const setUp = props.setUp;
+    const setBottomTab = props.setBottomTab;
 
     const [lockVals, setLockVals] = useState(false);
 
@@ -58,7 +59,7 @@ const Sliders = (props) => {
                             <LockOpenIcon />
                         </Button> 
                         }
-                        <Button variant="contained" onClick={setUp} disabled={!lockVals}>Start Typing Test</Button>
+                        <Button variant="contained" onClick={(e) => {setBottomTab(1); setUp();}} disabled={!lockVals}>Start Typing Test</Button>
                 </Grid>
 
                 <Grid xs={4} item style={{display: "flex", flexDirection: "column", gap: 15}}>
