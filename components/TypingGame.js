@@ -41,7 +41,6 @@ const TypingGame = (props) => {
     const [highScore, setHighScore] = useState(0)
 
     useKeyPress(key => {
-        console.log(key)
         if(endGame){
             setCountDown(60)
             setEndGame(false)
