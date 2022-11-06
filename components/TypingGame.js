@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import compileQuotes from './api/quoteAPI'
 import useKeyPress from './keyboard/useKeyPress';
 import { currentTime } from './api/getTime';
-import { Box, Container } from '@mui/system';
+import { Box } from '@mui/system';
 import keyboard from './keyboard/keyboard.js';
 
 const topRow = ['q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p'];
@@ -64,7 +64,7 @@ const TypingGame = (props) => {
         if (key !== "`" && !startGame){
             setStartHelp("Press ` to begin the game")
         }
-        else{
+        else {
             if (!startTime) {
                 setStartTime(currentTime());
               }
@@ -132,7 +132,7 @@ const TypingGame = (props) => {
               }
             } 
         }
-      });
+      };
 
   return (
     <Box>
@@ -146,6 +146,6 @@ const TypingGame = (props) => {
     </Box>
     
   );
-};
+})};
 
 export default TypingGame;

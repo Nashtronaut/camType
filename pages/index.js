@@ -22,6 +22,8 @@ import CameraGridContainer from '../components/keyboard/CameraGridContainer'
 
 export default function Home() {
 
+  const [showBoard, setShowBoard] = useState(true);
+
   return (
     <div>
       <Head>
@@ -40,10 +42,11 @@ export default function Home() {
       <main>
       <Container>
         <Box paddingTop="2rem">
-          <CameraGridContainer />
+          <CameraGridContainer setShowBoard={setShowBoard} />
         </Box>
       </Container>
 
+{showBoard &&
       <Container maxWidth="md" sx={{pt:5}}>
           <Paper elevation={3}
             sx={{
@@ -90,6 +93,7 @@ export default function Home() {
           </Box>
           </Paper>
         </Container>
+  }
       </main>
 
       <footer>
@@ -97,7 +101,7 @@ export default function Home() {
               pt: 5,
               pb: 6
             }}>
-        <Image src="/favicon.ico" alt="KeyboardCar" width={50} height={50} />
+          <Image src="/favicon.ico" alt="KeyboardCar" width={50} height={50} />
         </Box>
       </footer>
     </div>
