@@ -43,6 +43,7 @@ export default function Home() {
           <CameraGridContainer />
         </Box>
       </Container>
+
       <Container maxWidth="md" sx={{pt:5}}>
           <Paper elevation={3}
             sx={{
