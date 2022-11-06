@@ -24,7 +24,7 @@ const TypingGame = () => {
         new Array(20).fill(' ').join('')
       );
 
-    useKeyPress(key => {
+    useKeyPress((key) => {
 
         let updatedOutgoingChars = outgoingChars;
         let updatedIncomingChars = incomingChars;

@@ -12,6 +12,8 @@ const KeyboardGrid = (props) => {
     keyboard.rows[0].offset = props.topOffset;
     keyboard.rows[1].offset = props.midOffset;
     keyboard.rows[2].offset = props.botOffset;
+    const screenWidth = props.screenWidth;
+    const screenHeight = props.screenHeight;
 
     return (
         <div styles={{ color: "white" }}>
@@ -22,16 +24,14 @@ const KeyboardGrid = (props) => {
                         <Box className={styles.offset} style={{ width: `${row.offset}px`, height: `${keyboard.keyHeight}px` }}  /> {/* offset Div */}
 
                         {row.keys.map((key, index) => {
-
-                            let leftSide = row.offset + index * keyboard.keyWidth; 
-                            row.keys[index].xCors[0] = leftSide;
-                            row.keys[index].xCors[1] = leftSide + keyboard.keyWidth;
-
                             let rowNum = 2;
                             let bottomSide = keyboard.yOffset + rowNum * keyboard.keyHeight;
-                            
-                            row.keys[index].yCors[0] = bottomSide;
-                            row.keys[index].yCors[1] = bottomSide + keyboard.keyHeight;
+                            let leftSide = row.offset + index * keyboard.keyWidth;
+
+                            row.keys[index].xCors[0] = leftSide / screenWidth;
+                            row.keys[index].xCors[1] = (leftSide + keyboard.keyWidth) / screenWidth;
+                            row.keys[index].yCors[0] = bottomSide / screenHeight;
+                            row.keys[index].yCors[1] = (bottomSide + keyboard.keyHeight) / screenHeight;
                             rowNum--;
                             
                             return (
@@ -42,8 +42,6 @@ const KeyboardGrid = (props) => {
                 );
             })}
             <Box className={styles.yOffset} style={{ width: "100%", height: `${keyboard.yOffset}px` }}/>
-            {console.log(keyboard.rows[0].keys[0].xCors)}
-            {console.log(keyboard.rows[0].keys[0].yCors)}
         </div>
     );
 };
