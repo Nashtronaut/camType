@@ -19,6 +19,8 @@ import KeyboardIcon from '@mui/icons-material/Keyboard';
 import Typography from '@mui/material/Typography';
 
 import Countdown from '../components/Countdown';
+import CameraGridContainer from '../components/keyboard/CameraGridContainer'
+import KeyboardGrid from '../components/keyboard/KeyboardGrid'
 
 const PlaceholderGame = () => {
   return (
@@ -31,10 +33,13 @@ const PlaceholderGame = () => {
 
 export default function Home() {
 
-  const [showGrid, setShowGrid] = useState(true)
+  const [showGrid, setShowGrid] = useState(false)
   
   const startGame = () => {
-    setShowGrid(!showGrid)
+    if (showGrid){
+      console.log("start game")
+    }
+    setShowGrid(true)
   }
 
   return (
@@ -52,27 +57,21 @@ export default function Home() {
           </Typography>
         </Toolbar>
       </AppBar>
-    {/* Component to load after button push here */}
       <main>
       <Container>
           {/* Camera Component */}
         <Box paddingTop="2rem">
-            {/* Placeholder box for camera display */}
-            {showGrid && 
-            <Box>
-              <Box style={{height: 500, border: '1px dotted green'}}>
-                Grid Box
-              </Box>
-            </Box>}
+            {/* {!showGrid && <PlaceholderGame/>}
+            {!showGrid && <Countdown/>} */}
 
-            {!showGrid && <PlaceholderGame/>}
-            {!showGrid && <Countdown/>}
-
+            {showGrid && <CameraGridContainer/>}
+            
             <Box display="flex" justifyContent="center" paddingTop="2rem">
               <Button variant="outlined" color="secondary" onClick={startGame}>
-                {showGrid ? "Start Game" : "Oh no take me back"}
+                {!showGrid ? "Start Game" : "Press again to confirm key alignment"}
               </Button>
             </Box>
+            {!showGrid && <Typography variant="h6" textAlign="center" paddingTop="2rem">Note: starting game will request usage of your camera</Typography>}
         </Box>
       </Container>
       <Container maxWidth="md">
@@ -97,7 +96,7 @@ export default function Home() {
                 </ListItem>
                 <Divider/>
                 <ListItem>
-                  <ListItemText primary="Press <button> to activate your camera."/>
+                  <ListItemText primary="Press <START GAME> to activate your camera."/>
                 </ListItem>
                 <Divider/>
                 <ListItem>
@@ -105,7 +104,7 @@ export default function Home() {
                 </ListItem>
                 <Divider/>
                 <ListItem>
-                  <ListItemText primary="Once aligned, lock in the keyboard shape."/>
+                  <ListItemText primary="Once aligned, lock in the keyboard shape by pressing the button again."/>
                 </ListItem>
                 <Divider/>
                 <ListItem>
