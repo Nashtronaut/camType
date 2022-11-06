@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import compileQuotes from './api/quoteAPI'
 import useKeyPress from './keyboard/useKeyPress';
 import { currentTime } from './api/getTime';
-import { Box, Container } from '@mui/system';
+import { Box } from '@mui/system';
 import keyboard from './keyboard/keyboard.js';
 
 const topRow = ['q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p'];
@@ -77,47 +77,6 @@ const TypingGame = (props) => {
               setOutgoingChars(updatedOutgoingChars);
                   
               setCurrentChar(incomingChars.charAt(0));
-
-        let updatedOutgoingChars = outgoingChars;
-        let updatedIncomingChars = incomingChars;
-
-        if (key === currentChar) {
-
-          if (topRow.includes(key) || midRow.includes(key) || botRow.includes(key)) {
-            if (topRow.includes(key.toLowerCase())) {
-                let coords = keyboard.rows[0].keys.filter((key) => {
-                  if (key.id === currentChar) {
-                    return key;
-                  }
-                })
-                console.log(coords);
-            }
-
-            if (midRow.includes(key.toLowerCase())) {
-              let coords = keyboard.rows[1].keys.filter((key) => {
-                if (key.id === currentChar) {
-                  return key;
-                }
-              })
-              console.log(coords);
-            }
-
-            if (botRow.includes(key.toLowerCase())){
-              let coords = keyboard.rows[2].keys.filter((key) => {
-                if (key.id === currentChar) {
-                  return key;
-                }
-              })
-              console.log(coords);
-            }
-          }
-
-          if (leftPadding.length > 0) {
-            setLeftPadding(leftPadding.substring(1));
-          }
-          updatedOutgoingChars += currentChar;
-          setOutgoingChars(updatedOutgoingChars);
-
               
               updatedIncomingChars = incomingChars.substring(1);
               if (updatedIncomingChars.split(' ').length < 10) {
@@ -130,7 +89,35 @@ const TypingGame = (props) => {
                 setWpm(((wordCount + 1) / durationInMinutes).toFixed(2));
                 
               }
-            } 
+            }
+            if (topRow.includes(key) || midRow.includes(key) || botRow.includes(key)) {
+                if (topRow.includes(key.toLowerCase())) {
+                    let coords = keyboard.rows[0].keys.filter((key) => {
+                      if (key.id === currentChar) {
+                        return key;
+                      }
+                    })
+                    console.log(coords);
+                }
+    
+                if (midRow.includes(key.toLowerCase())) {
+                  let coords = keyboard.rows[1].keys.filter((key) => {
+                    if (key.id === currentChar) {
+                      return key;
+                    }
+                  })
+                  console.log(coords);
+                }
+    
+                if (botRow.includes(key.toLowerCase())){
+                  let coords = keyboard.rows[2].keys.filter((key) => {
+                    if (key.id === currentChar) {
+                      return key;
+                    }
+                  })
+                  console.log(coords);
+                }
+              }
         }
       });
 
@@ -144,7 +131,6 @@ const TypingGame = (props) => {
         <h3 style={{textAlign: "center", fontFamily: "monospace", fontSize: "1.5rem"}}>WPM: {wpm} | Time Left: {countDown}</h3>
         {!startGame && <h4 style={{textAlign: "center", fontFamily: "monospace", fontSize: "1.2rem"}}> {startHelp}</h4>}
     </Box>
-    
   );
 };
 
