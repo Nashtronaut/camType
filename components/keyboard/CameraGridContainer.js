@@ -26,7 +26,14 @@ const setUp = () => {
                            {color: '#00FF00', lineWidth: 1});
             drawLandmarks(canvasCtx, landmarks, {color: '#FF0000', lineWidth: 1, radius: 2 });
           }
+
+          if (results.multiHandLandmarks.length > 1) {
+                let lIndex = [results.multiHandLandmarks[0][8].x, results.multiHandLandmarks[0][8].y];
+                console.log(lIndex)
+          }
+          
         }
+
         canvasCtx.restore();
       }
       
@@ -61,6 +68,8 @@ const CameraGridContainer = () => {
     const [topOffset, setTopOffset] = useState(200);
     const [midOffset, setMidOffset] = useState(225);
     const [botOffset, setBotOffset] = useState(250);
+    const screenHeight = 560;
+    const screenWidth = 1000;
 
     const handleKeyWidth = (e, newValue) => {
         setKeyWidth(newValue);
@@ -97,14 +106,16 @@ const CameraGridContainer = () => {
                 <Grid xs={12} item style={{ display: "flex" }}>
                     <canvas className="output_canvas"  style={{ position: 'absolute', background: "rgba(42,27,61,255)", height: "100%", width: "100%"}} />
                     <video className="input_video" style={{ display: "none" }} autoPlay playInline /> 
-                    <Box style={{ position: 'relative', width: "100%", height: "100%", display: "flex", zIndex: 1, alignItems: 'end', minHeight: "35rem", maxHeight: "35rem", border: "1px solid hotpink", overflow: 'hidden' }}>
+                    <Box style={{ position: 'relative', width: "100%", height: "100%", display: "flex", zIndex: 1, alignItems: 'end', minWidth: `${screenWidth}px`, maxWidth: `${screenWidth}px`, minHeight: `${screenHeight}px`, maxHeight: `${screenHeight}px`, border: "1px solid hotpink", overflow: 'hidden' }}>
                         <KeyboardGrid
                             keyHeight={keyHeight}
                             keyWidth={keyWidth}
                             yOffset={yOffset}
                             topOffset={topOffset}
                             midOffset={midOffset}
-                            botOffset={botOffset} />
+                            botOffset={botOffset} 
+                            screenHeight={screenHeight}
+                            screenWidth={screenWidth}/>
                     </Box>
                 </Grid>
             </Grid>
@@ -125,11 +136,12 @@ const CameraGridContainer = () => {
                 handleMidOffset={handleMidOffset}
                 handleBotOffset={handleBotOffset}
                 setUp={setUp}
+                setBottomTab={setBottomTab}
                 />
             }
 
-            {bottomTab === 1 && 
-                <TypingGame/>
+            {bottomTab === 1 &&
+                <TypingGame />
             }
         </Box>
     );
